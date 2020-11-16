@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View view) { // asd
         switch (view.getId()){
             case R.id.btn_bankomats_list:
                 Intent intent = new Intent(this,BankomatsActivity.class);
