@@ -1,4 +1,4 @@
-package com.skxrb1ud.bank;
+package com.example.myapplication;
 
 import org.junit.Test;
 
