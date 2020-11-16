@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">bank</string>
+    <string name="app_name">practica</string>
+    <string name="otdeleeniya">Отделения и банкоматы</string>
+    <string name="button_login">Войти</string>
+    <string name="couse">Курсы валют</string>
+    <string name="time_work">Чысы работы: </string>
+    <string name="login">Авторизация</string>
+    <string name="hint_dialog_loing">Введите Ваш логин и пароль</string>
 </resources>
