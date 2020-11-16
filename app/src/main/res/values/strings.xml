@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">WSBank</string>
+    <string name="sell">Продажа</string>
+    <string name="buy">Покупка</string>
+    <string name="pointsTitle">Отделения и банкоматы</string>
+    <string name="currenciesTitle">Курсы валют</string>
+    <string name="usd">USD</string>
+    <string name="eur">EUR</string>
+    <string name="enter">Войти</string>
+    <string name="bankomat">Банкомат</string>
 </resources>
