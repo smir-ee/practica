@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">praktika</string>
+    <string name="atms">Отделения и банкоматы</string>
+    <string name="button_login">ВОЙТИ</string>
+    <string name="course">Курсы валют</string>
+    <string name="time_work">Часы работы: </string>
+    <string name="login">Авторизация</string>
+    <string name="hint_dialog_login">Введите Ваш логин и пароль</string>
 </resources>
