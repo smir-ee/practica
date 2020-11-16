@@ -8,4 +8,9 @@
     <string name="eur">EUR</string>
     <string name="enter">Войти</string>
     <string name="bankomat">Банкомат</string>
+    <string name="authorization">Авторизация</string>
+    <string name="login_title">Введите ваш логин и пароль</string>
+    <string name="text_login">Логин</string>
+    <string name="text_password">Пароль</string>
+    <string name="authorization_error">Ошибка авторизации</string>
 </resources>
