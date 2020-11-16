@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Button btn = findViewById(R.id.btn_bankomats_list);
         btn.setOnClickListener(this);
+        findViewById(R.id.btn_currency).setOnClickListener(this);
     }
 
     @Override
@@ -22,6 +23,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.btn_bankomats_list:
                 Intent intent = new Intent(this,BankomatsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_currency:
+                intent = new Intent(this,CurrencyActivity.class);
                 startActivity(intent);
                 break;
         }
