@@ -14,12 +14,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/otdeleeniya"
-            android:padding="@dimen/padding_for_title"/>
+            android:padding="@dimen/padding_for_title"
+            android:textSize="@dimen/size_couse_button"/>
 
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listViewBanks"
+        android:id="@+id/listView_Banks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="radius_button">10dp</dimen>
+
     <dimen name="size_couse_button">16dp</dimen>
+    <dimen name="size_row">12dp</dimen>
+
     <dimen name="padding_main_buttons">20dp</dimen>
     <dimen name="padding_for_title">15dp</dimen>
+    <dimen name="padding_for_row">5dp</dimen>
 
 
 

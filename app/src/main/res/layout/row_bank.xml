@@ -24,6 +24,7 @@
             android:textColor="@color/colorBlack"
             android:layout_weight="1"
             android:text="Банкомат"
+            android:textSize="@dimen/size_row"
             />
 
         <TextView
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Открыто"
+            android:textSize="@dimen/size_row"
             />
 
         <TextView
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:text="@string/time_work"
             android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_row"
             />
 
         <TextView
@@ -48,6 +51,7 @@
             android:textColor="@color/colorBlack"
             android:layout_weight="1"
             android:text="00:00 - 00:00"
+            android:textSize="@dimen/size_row"
             />
 
     </LinearLayout>
