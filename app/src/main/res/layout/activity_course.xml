@@ -16,7 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="1234123"
+            android:text="Валюта"
             android:textSize="@dimen/size_couse_button"/>
 
         <TextView
@@ -40,6 +40,6 @@
     <ListView
         android:id="@+id/listView_Course"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
