@@ -40,9 +40,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/padding_main_buttons"
+        android:layout_marginTop="@dimen/login_button_padding"
         android:background="@drawable/button_radius_blue"
         android:padding="25dp"
-        android:text="@string/login"
+        android:text="@string/button_login"
         android:textColor="@color/colorWhite" />
 </LinearLayout>

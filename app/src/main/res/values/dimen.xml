@@ -11,6 +11,7 @@
     <dimen name="padding_for_title">15dp</dimen>
     <dimen name="padding_for_row">5dp</dimen>
     <dimen name="padding_for_dialog">30dp</dimen>
+    <dimen name="login_button_padding">50dp</dimen>
 
 
 

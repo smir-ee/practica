@@ -32,6 +32,7 @@
             android:id="@+id/textView_Date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="16.11.2020"
             android:textColor="@color/colorGray"
             android:layout_weight="1" />
 
@@ -60,8 +61,10 @@
                 android:id="@+id/textView_USD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="69,99"
                 android:textColor="@color/colorGray"
-                android:textSize="@dimen/size_couse_button" />
+                android:textSize="@dimen/size_couse_button"/>
 
         </LinearLayout>
 
@@ -84,6 +87,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorGray"
+                android:paddingLeft="5dp"
+                android:text="79,99"
                 android:textSize="@dimen/size_couse_button" />
         </LinearLayout>
 
