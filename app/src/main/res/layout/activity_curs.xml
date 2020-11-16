@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/headerCurs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/gray">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="31.12.2018" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="10dp"
+            android:text="Покупка" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/usaImg1"
+            android:layout_width="35dp"
+            android:layout_height="23dp"
+            app:srcCompat="@drawable/usa"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Американский доллар"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="39dp" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="194dp"
+            tools:layout_editor_absoluteY="28dp" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="312dp"
+            tools:layout_editor_absoluteY="28dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/usaImg5"
+            android:layout_width="35dp"
+            android:layout_height="23dp"
+            app:srcCompat="@drawable/usa"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Американский доллар"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="39dp" />
+
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="194dp"
+            tools:layout_editor_absoluteY="28dp" />
+
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="312dp"
+            tools:layout_editor_absoluteY="28dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/usaImg6"
+            android:layout_width="35dp"
+            android:layout_height="23dp"
+            app:srcCompat="@drawable/usa"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView61"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Американский доллар"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="39dp" />
+
+        <TextView
+            android:id="@+id/textView63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="194dp"
+            tools:layout_editor_absoluteY="28dp" />
+
+        <TextView
+            android:id="@+id/textView65"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="312dp"
+            tools:layout_editor_absoluteY="28dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/usaImg7"
+            android:layout_width="35dp"
+            android:layout_height="23dp"
+            app:srcCompat="@drawable/usa"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView71"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView72"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Американский доллар"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="39dp" />
+
+        <TextView
+            android:id="@+id/textView73"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="194dp"
+            tools:layout_editor_absoluteY="28dp" />
+
+        <TextView
+            android:id="@+id/textView74"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="312dp"
+            tools:layout_editor_absoluteY="28dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/usaImg8"
+            android:layout_width="35dp"
+            android:layout_height="23dp"
+            app:srcCompat="@drawable/usa"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView81"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView82"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Американский доллар"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="39dp" />
+
+        <TextView
+            android:id="@+id/textView83"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="194dp"
+            tools:layout_editor_absoluteY="28dp" />
+
+        <TextView
+            android:id="@+id/textView84"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="312dp"
+            tools:layout_editor_absoluteY="28dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/usaImg"
+            android:layout_width="35dp"
+            android:layout_height="23dp"
+            app:srcCompat="@drawable/usa"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Американский доллар"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="39dp" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="194dp"
+            tools:layout_editor_absoluteY="28dp" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="64,95"
+            android:textColor="@color/blue"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="312dp"
+            tools:layout_editor_absoluteY="28dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
