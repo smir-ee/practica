@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BezmetnyyBANK</string>
+    <string name="offices">Отделения и банкоматы</string>
+    <string name="button_login">Войти</string>
+    <string name="course">Курсы валют</string>
+    <string name="time_work">Чысы работы: </string>
+    <string name="login">Авторизация</string>
+    <string name="hint_dialog">Введите Ваш логин и пароль</string>
 </resources>
