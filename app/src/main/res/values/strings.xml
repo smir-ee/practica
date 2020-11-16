@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">practica</string>
+
+    <string name="otdeleeniya">Отделения и банкоматы</string>
+    <string name="login">Войти</string>
+    <string name="couse">Курсы валют</string>
 </resources>
