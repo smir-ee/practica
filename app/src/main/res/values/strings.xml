@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">bank</string>
+    <string name="name">Bank</string>
+    <string name="bankomat_text">Отделения и банкоматы</string>
+    <string name="vhod_text">Войти</string>
 </resources>
