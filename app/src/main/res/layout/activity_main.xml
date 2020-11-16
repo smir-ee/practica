@@ -85,7 +85,7 @@
                 android:text="11.16.2020"
                 android:textAlignment="textEnd"
                 android:textColor="#878787"
-                android:textSize="11dp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
