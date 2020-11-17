@@ -18,12 +18,15 @@ public class BankomatsAdapter extends RecyclerView.Adapter<BankomatsAdapter.View
     Context mContext;
     Bankomat[] mBankomats;
     public BankomatsAdapter(Context context, Bankomat[] bankomats){
+
         mContext = context;
         mBankomats = bankomats;
     }
     @NonNull
+
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.bankomat_item,parent,false);
         return new ViewHolder(view);
@@ -31,17 +34,16 @@ public class BankomatsAdapter extends RecyclerView.Adapter<BankomatsAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         Bankomat bankomat = mBankomats[position];
         holder.address.setText(bankomat.getAddress());
         holder.status.setText(bankomat.getStatusText());
         holder.timings.setText(bankomat.getTimings());
-        if(bankomat.getStatus()) {
-            holder.status.setTextColor(mContext.getResources().getColor(R.color.bankomat_on));
-        }else{
-            holder.status.setTextColor(mContext.getResources().getColor(R.color.bankomat_off));
+        if(bankomat.getStatus()) { holder.status.setTextColor(mContext.getResources().getColor(R.color.bankomat_on));
+        }else{ holder.status.setTextColor(mContext.getResources().getColor(R.color.bankomat_off));
+
         }
     }
-
     @Override
     public int getItemCount() {
         return mBankomats.length;

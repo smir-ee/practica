@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
-            android:text="64.95"/>
+            android:text="76.92"/>
         <ImageView
             android:layout_width="5pt"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="64.95"
+            android:text="76.60"
             android:textColor="@color/colorPrimary"
             />
         <ImageView

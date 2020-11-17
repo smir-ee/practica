@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn.setOnClickListener(this);
         findViewById(R.id.btn_currency).setOnClickListener(this);
 
-
     }
     @Override
     public void onClick(View view) {

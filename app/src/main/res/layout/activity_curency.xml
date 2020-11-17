@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAlignment="textStart"
-            android:text="31.12.2018"
+            android:text="17.11.2020"
             android:padding="10dp"/>
         <TextView
             android:layout_width="match_parent"
