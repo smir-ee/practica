@@ -8,6 +8,7 @@
         android:id="@+id/textView_address_bank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Адрес: г.Омск, Ленина 24"
         android:textColor="@color/colorBlack"/>
 
     <LinearLayout
@@ -30,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Открыто"
+            android:text="Работает"
             android:textSize="@dimen/size_row"/>
 
         <TextView
@@ -46,7 +47,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:layout_weight="1"
-            android:text="00:00 - 00:00"
+            android:padding="5dp"
+            android:text="Круглосуточно"
             android:textSize="@dimen/size_row"/>
 
     </LinearLayout>

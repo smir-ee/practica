@@ -5,5 +5,5 @@
     <string name="button_login">Войти</string>
     <string name="course">Курсы валют</string>
     <string name="write_login">Введите логин и пароль</string>
-    <string name="work_time">Время работы</string>
+    <string name="work_time">Время работы:</string>
 </resources>
