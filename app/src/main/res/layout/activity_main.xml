@@ -12,7 +12,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="31dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,25 +20,25 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/logo_image" />
+            android:src="@drawable/logo" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/logo_text" />
+            android:src="@drawable/name" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_bankomats_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="377dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="17dp"
         android:background="@drawable/button_background"
-        android:drawableLeft="@drawable/map_pin"
+        android:drawableLeft="@drawable/map"
         android:padding="30dp"
-        android:text="@string/bankomats_text"
+        android:text="Отделения и банкоматы"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
@@ -47,9 +47,9 @@
         android:id="@+id/btn_currency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="17dp"
         android:background="@drawable/button_background"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,25 +68,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@drawable/curency_icon" />
+                android:src="@drawable/dollar" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Курсы валют"
-                android:textColor="#000"
-                android:textSize="20dp" />
+                android:textSize="21dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.7"
+                android:layout_weight="1.6"
                 android:text="11.16.2020"
-                android:textAlignment="textEnd"
-                android:textColor="#878787"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textAlignment="textEnd"/>
         </LinearLayout>
 
         <LinearLayout
@@ -105,14 +101,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
-                    android:text="USD"
-                    android:textColor="#000"
-                    android:textStyle="bold" />
+                    android:text="USD"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="65.2" />
+                    android:text="77.2" />
             </LinearLayout>
 
             <LinearLayout
@@ -132,24 +126,24 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="75.14" />
+                    android:text="90.37" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="379dp"
+        android:layout_height="91dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_marginTop="80dp"
         android:background="@drawable/button_background"
-        android:text="@string/signin_text"
-        android:padding="30dp"
-        android:textSize="9pt"
+        android:backgroundTint="@color/darkblue"
+        android:padding="25dp"
+        android:text="Войти"
         android:textColor="@android:color/white"
+        android:textSize="10pt"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_currency" />
 

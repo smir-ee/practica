@@ -10,8 +10,7 @@
         android:id="@+id/bankomat_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Москва, ул. Вавилова, д. 7"
-        android:fontFamily="sans-serif-light"
+        android:text="Омск, ул. Гашека, д. 11"
         android:textColor="#000"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,16 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Банкомат"
-            android:fontFamily="sans-serif-light"
-            android:textColor="#000"/>
+            android:textColor="@android:color/black"/>
         <TextView
             android:id="@+id/bankomat_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
-            android:textColor="@color/bankomat_on"
-            android:fontFamily="sans-serif-light"
+            android:textColor="@color/on"
             android:text="Работает"/>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -40,18 +37,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-light"
                 android:textColor="#000"
                 android:text="Часы работы: "/>
             <TextView
                 android:id="@+id/bankomat_timings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-light"
                 android:textColor="#000"
-                android:text="09:00-00:00"/>
+                android:text="Круглосуточно"/>
         </LinearLayout>
 
     </LinearLayout>
