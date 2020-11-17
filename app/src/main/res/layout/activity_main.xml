@@ -13,7 +13,7 @@
         android:maxWidth="500dp">
         <LinearLayout
             android:baselineAligned="false"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -31,7 +31,7 @@
         <LinearLayout
             android:baselineAligned="false"
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
+            android:layout_margin="8dp"
             android:gravity="center_vertical"
             android:background="@drawable/roundcornerslayout"
             android:layout_height="100dp">
@@ -51,7 +51,7 @@
         <LinearLayout
             android:baselineAligned="false"
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
+            android:layout_margin="8dp"
             android:orientation="vertical"
             android:gravity="center_vertical"
             android:background="@drawable/roundcornerslayout"
@@ -130,8 +130,7 @@
         </LinearLayout>
         <Button
             android:baselineAligned="false"
-            android:layout_margin="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:textSize="20sp"
