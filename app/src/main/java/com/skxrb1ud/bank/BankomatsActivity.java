@@ -28,7 +28,6 @@ public class BankomatsActivity extends AppCompatActivity {
         bankomats[1].setTimings("12:00-00:00");
         bankomats[0].setStatus(true);
         bankomats[1].setStatus(false);
-
         BankomatsAdapter adapter = new BankomatsAdapter(this,bankomats);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
         recyclerView.setAdapter(adapter);
