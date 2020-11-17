@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/background">
-
+    android:background="@drawable/bg"
+    tools:context=".MainActivity" >
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,131 +18,139 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/logo" />
+            android:background="@drawable/icon_museum"
+            android:contentDescription="@string/todo2" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/name" />
+            android:background="@drawable/WorldSkills_label"
+            android:contentDescription="@string/todo" />
+
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_bankomats_list"
-        android:layout_width="377dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="17dp"
-        android:background="@drawable/button_background"
-        android:drawableLeft="@drawable/map"
+
+        android:id="@+id/btn_ATM_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/btn_bg"
+        android:drawableStart="@drawable/icon_map"
         android:padding="30dp"
-        android:text="Отделения и банкоматы"
+        android:text="@string/txtATM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
+   <LinearLayout
+       android:id="@+id/btn_currency"
+       android:background="@drawable/btn_bg"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="16dp"
+       android:layout_marginTop="32dp"
+       android:layout_marginEnd="16dp"
+       android:orientation="vertical"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/btn_ATM_list">
     <LinearLayout
-        android:id="@+id/btn_currency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="17dp"
-        android:background="@drawable/button_background"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_bankomats_list">
-
-        <LinearLayout
-
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            android:layout_weight="2"
+            android:src="@drawable/icon_currency" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:src="@drawable/dollar" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Курсы валют"
-                android:textSize="21dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.6"
-                android:text="11.16.2020"
-                android:textAlignment="textEnd"/>
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            android:layout_weight="1"
+            android:text="Курсы валют"
+            android:textColor="#000"
+            android:textSize="20dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:text="USD"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="77.2" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:text="EUR"
-                    android:textColor="#000"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="90.37" />
-            </LinearLayout>
-        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.7"
+            android:text="16.11.2020"
+            android:textAlignment="textEnd"
+            android:textColor="#878787"
+            android:textSize="12sp"
+            android:textStyle="bold" />
     </LinearLayout>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:padding="10dp">
 
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:gravity="center">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginRight="5dp"
+                   android:text="USD"
+                   android:textColor="#000"
+                   android:textStyle="bold" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="76.35" />
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:gravity="center">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginRight="5dp"
+                   android:text="EUR"
+                   android:textColor="#000"
+                   android:textStyle="bold" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="90.53" />
+           </LinearLayout>
+       </LinearLayout>
+   </LinearLayout>
     <Button
-        android:layout_width="379dp"
-        android:layout_height="91dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/darkblue"
-        android:padding="25dp"
-        android:text="Войти"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:background="@drawable/btn_bg"
+        android:text="войти"
+        android:padding="30dp"
+        android:textSize="9pt"
         android:textColor="@android:color/white"
-        android:textSize="10pt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_currency" />
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
