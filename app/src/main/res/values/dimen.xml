@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="radius_button">10dp</dimen>
-    <dimen name="size_course_button">20dp</dimen>
+    <dimen name="size_course_button">15dp</dimen>
     <dimen name="size_course">15dp</dimen>
     <dimen name="size_course_datecourse">12dp</dimen>
     <dimen name="size_row">10dp</dimen>
