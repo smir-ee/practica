@@ -22,8 +22,8 @@ public class BankomatsActivity extends AppCompatActivity {
         bankomats[0] = new Bankomat();
         bankomats[1] = new Bankomat();
 
-        bankomats[0].setAddress("Ивановский район, д. Андреево, д. 10");
-        bankomats[1].setAddress("Москва, Ленинский проспект, дом 4");
+        bankomats[0].setAddress("Омск, ул. Дианова, 26");
+        bankomats[1].setAddress("Санкт-Петербург, Граждaнский пр-т., 36");
         bankomats[0].setTimings("00:00-12:00");
         bankomats[1].setTimings("12:00-00:00");
         bankomats[0].setStatus(true);
