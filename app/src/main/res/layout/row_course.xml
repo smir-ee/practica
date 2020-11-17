@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/padding_for_row">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/main_icon"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EUR"
+                    android:textColor="@color/colorBlue"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlue"
+                android:text="dollar"
+                android:padding="@dimen/padding_for_row"
+                android:textSize="@dimen/size_row"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView_Buy_Course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234"
+                android:textColor="@color/colorBlue"/>
+
+            <ImageView
+                android:id="@+id/arrow_Buy_Course"
+                android:layout_width="15dp"
+                android:layout_height="30dp"
+                android:src="@drawable/arrow"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView_Sale_Course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234"
+                android:textColor="@color/colorBlue"/>
+
+            <ImageView
+                android:id="@+id/arrow_Sale_Course"
+                android:layout_width="15dp"
+                android:layout_height="30dp"
+                android:src="@drawable/arrow"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
