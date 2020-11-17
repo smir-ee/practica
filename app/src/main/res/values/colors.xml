@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#6909F3</color>
     <color name="colorPrimaryDark">#1542C3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="fon">#03DAC5</color>
     <color name="bankomat_off">#CF3F4B</color>
     <color name="bankomat_on">#3FCF74</color>
     <color name="white">#FFFFFF</color>
