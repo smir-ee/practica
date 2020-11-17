@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:src="@drawable/ic_baseline_account_balance_54"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064">
+    </ImageView>открой папку с проектом
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nameBank"
+        android:textColor="@color/wordPink"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <Button
+        android:id="@+id/buttonBranches"
+        android:layout_width="341dp"
+        android:layout_height="110dp"
+        android:background="@drawable/buttonstyle"
+        android:text="@string/separation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.194"
+        android:drawableStart="@drawable/ic_baseline_room_24"
+        android:padding="42dp">
+    </Button>
+
+    <Button
+        android:id="@+id/buttonRate"
+        android:layout_width="347dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/buttonstyle"
+        android:text="@string/rate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBranches"
+        app:layout_constraintVertical_bias="0.0"
+        android:drawableStart="@drawable/ic_baseline_attach_money_24"
+        android:padding="43dp">
+    </Button>
+
+    <Button
+        android:id="@+id/buttonEnter"
+        android:layout_width="354dp"
+        android:layout_height="116dp"
+        android:background="@drawable/buttonstyle"
+        android:backgroundTint="@color/enterBlue"
+        android:onClick="showDialog"
+        android:text="@string/enter"
+        android:textColor="@color/whiteButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRate"
+        app:layout_constraintVertical_bias="0.352">
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/adresa"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/addressAtm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="155dp"
+        android:layout_height="19dp"
+        android:text="@string/address"
+        android:textColor="@color/textBlack"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+        android:layout_width="68dp"
+        android:layout_height="21dp"
+        android:text="@string/ATM"
+        android:textColor="@color/textBlack"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="35dp"/>
+
+        <TextView
+            android:id="@+id/workatm"
+        android:layout_width="72dp"
+        android:layout_height="21dp"
+        android:text="@string/work"
+        android:textColor="@color/textBlack"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="35dp"/>
+
+            <LinearLayout
+                android:layout_width="89dp"
+                android:layout_height="match_parent">
+            </LinearLayout>
+            <TextView
+                android:layout_width="196dp"
+                android:layout_height="21dp"
+                android:text="@string/timeATM"
+                android:textColor="@color/textBlack"
+                tools:layout_editor_absoluteX="199dp"
+                tools:layout_editor_absoluteY="35dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/addressBranch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="155dp"
+            android:layout_height="19dp"
+            android:text="@string/address"
+            android:textColor="@color/textBlack"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/branch"
+                android:textColor="@color/textBlack"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="35dp" />
+
+            <TextView
+                android:id="@+id/workbranch"
+                android:layout_width="72dp"
+                android:layout_height="21dp"
+                android:text="@string/work"
+                android:textColor="@color/textBlack"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="35dp"/>
+
+            <LinearLayout
+                android:layout_width="83dp"
+                android:layout_height="match_parent"></LinearLayout>
+
+            <TextView
+                android:layout_width="196dp"
+                android:layout_height="21dp"
+                android:text="@string/timeATM"
+                android:textColor="@color/textBlack"
+                tools:layout_editor_absoluteX="199dp"
+                tools:layout_editor_absoluteY="35dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
