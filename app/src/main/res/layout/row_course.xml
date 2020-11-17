@@ -65,7 +65,7 @@
                 android:id="@+id/arrow_Buy_Course"
                 android:layout_width="15dp"
                 android:layout_height="30dp"
-                android:src="@drawable/main_icon"
+                android:src="@drawable/arrow"
                 android:scaleType="fitCenter"/>
 
         </LinearLayout>
@@ -88,14 +88,10 @@
                 android:id="@+id/arrow_Sale_Course"
                 android:layout_width="15dp"
                 android:layout_height="30dp"
-                android:src="@drawable/main_icon"
+                android:src="@drawable/arrow"
                 android:scaleType="fitCenter"/>
 
         </LinearLayout>
-
-
-
-
 
     </LinearLayout>
 

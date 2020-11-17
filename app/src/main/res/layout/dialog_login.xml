@@ -24,11 +24,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:layout_marginBottom="@dimen/padding_for_title"/>
+        android:layout_marginBottom="@dimen/padding_for_title"
+        android:hint="Логин"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:hint="Пароль"/>
 
 </LinearLayout>
