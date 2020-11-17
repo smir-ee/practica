@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+    <TextView
+        android:id="@+id/bankomat_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Москва, ул. Вавилова, д. 7"
+        android:fontFamily="casual"
+        android:textColor="#000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Банкомат"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/bankomat_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/bankomat_off"
+            android:fontFamily="casual"
+            android:text="Закрыт"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="casual"
+                android:textColor="#000"
+                android:text="Часы работы: "/>
+            <TextView
+                android:id="@+id/bankomat_timings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="casual"
+                android:textColor="#000"
+                android:text="09:00-00:00"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/bankomat_addresss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Москва, ул. Вавилова, д. 7"
+        android:fontFamily="casual"
+        android:textColor="#000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Банкомат"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/bankomat_statuss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/bankomat_off"
+            android:fontFamily="casual"
+            android:text="Закрыт"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="casual"
+                android:textColor="#000"
+                android:text="Часы работы: "/>
+            <TextView
+                android:id="@+id/bankomat_timingss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="casual"
+                android:textColor="#000"
+                android:text="09:00-00:00"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/bankomat_addressss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Москва, ул. Вавилова, д. 7"
+        android:fontFamily="casual"
+        android:textColor="#000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Банкомат"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/bankomat_statusss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/bankomat_on"
+            android:fontFamily="casual"
+            android:text="Открыт"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="casual"
+                android:textColor="#000"
+                android:text="Часы работы: "/>
+            <TextView
+                android:id="@+id/bankomat_timingsss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="casual"
+                android:textColor="#000"
+                android:text="09:00-00:00"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
