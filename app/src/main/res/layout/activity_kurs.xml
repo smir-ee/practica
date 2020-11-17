@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".CurrencyActivity">
+    tools:context=".kursActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E8E8E8">
+        android:background="#E6E6E6">
         <TextView
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAlignment="textStart"
-            android:text="31.12.2018"
+            android:text="16.11.2020"
             android:padding="10dp"/>
         <TextView
             android:layout_width="match_parent"
@@ -33,13 +33,13 @@
             android:text="Продажа"
             android:padding="10dp"/>
     </LinearLayout>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
+    <include layout="@layout/kursUSD"/>
+    <include layout="@layout/kursUSD"/>
+    <include layout="@layout/kursUSD"/>
+    <include layout="@layout/kursUSD"/>
+    <include layout="@layout/kursUSD"/>
+    <include layout="@layout/kursUSD"/>
+    <include layout="@layout/kursUSD"/>
+    <include layout="@layout/kursUSD"/>
+    <include layout="@layout/kursUSD"/>
 </LinearLayout>

@@ -28,18 +28,18 @@
             android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-
-            android:src="@drawable/usd_flag" />
+            android:src="@drawable/flagus"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Американский доллар"
+            android:text="Доллар США"
             android:textSize="5pt"
-            android:textColor="@color/colorPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            android:textColor="@color/blue"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,14 +49,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:text="64.95"/>
+            android:textColor="@color/blue"
+            android:text="77.2"/>
         <ImageView
             android:layout_width="5pt"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_arrow_up"
-            app:tint="@color/bankomat_on" />
+            android:src="@drawable/up"
+            app:tint="@color/on" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,15 +66,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="64.95"
-            android:textColor="@color/colorPrimary"
+            android:text="77.2"
+            android:textColor="@color/blue"
             />
         <ImageView
             android:layout_width="5pt"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_arrow_down"
-            app:tint="@color/bankomat_off"
+            android:src="@drawable/down"
+            app:tint="@color/off"
             />
 
     </LinearLayout>

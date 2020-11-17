@@ -1,4 +1,4 @@
-package com.skxrb1ud.bank;
+package com.gurzhiy.bank;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_currency:
-                intent = new Intent(this,CurrencyActivity.class);
+                intent = new Intent(this, kursActivity.class);
                 startActivity(intent);
                 break;
         }

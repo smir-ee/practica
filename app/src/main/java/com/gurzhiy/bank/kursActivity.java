@@ -1,14 +1,14 @@
-package com.skxrb1ud.bank;
+package com.gurzhiy.bank;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CurrencyActivity extends AppCompatActivity {
+public class kursActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_curency);
+        setContentView(R.layout.activity_kurs);
     }
 }

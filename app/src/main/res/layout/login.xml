@@ -9,36 +9,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/signin"
-        android:fontFamily="sans-serif"
-        android:textSize="25sp"
+        android:text="Авторизация"
+        android:textSize="23sp"
         android:textColor="@android:color/black"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="Введите Ваш логин и пароль"
-        android:fontFamily="sans-serif-light"
-        android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:textSize="10dp"
         android:textColor="@android:color/black"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/input_background"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/login_background"
         android:padding="10dp"
         android:hint="Логин"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:inputType="textPassword"
-        android:background="@drawable/input_background"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/login_background"
         android:padding="10dp"
         android:hint="Пароль"/>
 

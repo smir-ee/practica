@@ -1,4 +1,4 @@
-package com.skxrb1ud.bank.models;
+package com.gurzhiy.bank.models;
 
 public class Bankomat {
     private String address;
