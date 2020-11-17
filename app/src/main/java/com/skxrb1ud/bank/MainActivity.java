@@ -16,8 +16,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btn = findViewById(R.id.btn_bankomats_list);
         btn.setOnClickListener(this);
         findViewById(R.id.btn_currency).setOnClickListener(this);
-    }
 
+
+    }
     @Override
     public void onClick(View view) {
         switch (view.getId()){
