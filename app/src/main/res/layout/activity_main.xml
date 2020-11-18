@@ -137,10 +137,11 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_main_buttons"
         android:background="@drawable/button_radius_blue"
-        android:text="@string/button_login"
-        android:textColor="@color/colorWhite"
+        android:onClick="onClickLogin"
         android:padding="25dp"
-        android:layout_marginTop="@dimen/padding_main_buttons"/>
+        android:text="@string/button_login"
+        android:textColor="@color/colorWhite" />
 
 </LinearLayout>
