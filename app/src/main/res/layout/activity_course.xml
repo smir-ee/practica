@@ -15,7 +15,7 @@
             android:id="@+id/textView_Date_CourseAct"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:text="1234123"
             android:textSize="@dimen/size_couse_button"/>
 

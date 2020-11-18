@@ -13,7 +13,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1.5">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -26,9 +26,11 @@
                     android:layout_width="40dp"
                     android:layout_height="20dp"
                     android:src="@drawable/main_icon"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    />
 
                 <TextView
+                    android:id="@+id/title_charcode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="EUR"
@@ -38,6 +40,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/title_valute"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlue"

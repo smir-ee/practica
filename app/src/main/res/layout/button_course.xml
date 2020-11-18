@@ -14,26 +14,27 @@
         android:padding="10dp">
 
         <ImageView
-            android:layout_width="0dp"
+            android:layout_width="35dp"
             android:layout_height="30dp"
             android:src="@drawable/course_icon"
             android:scaleType="fitCenter"
             android:layout_weight="1"/>
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:text="@string/couse"
             android:layout_weight="2"
-            android:textSize="@dimen/size_couse_button"/>
+            android:textSize="16dp"/>
 
         <TextView
             android:id="@+id/textView_Date"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorGray"
             android:layout_weight="1"
+            android:textSize="@dimen/size_couse_button"
             />
 
     </LinearLayout>
@@ -55,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack"
-                android:text="USD"
+                android:text="USD   "
                 android:textSize="@dimen/size_couse_button"/>
             <TextView
                 android:id="@+id/textView_USD"
@@ -78,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack"
-                android:text="EUR"
+                android:text="EUR   "
                 android:textSize="@dimen/size_couse_button"
                 />
 

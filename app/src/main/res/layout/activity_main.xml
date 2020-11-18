@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/main_background"
-    android:padding="50dp"
+    android:padding="40dp"
     >
 
     <LinearLayout
@@ -38,7 +39,8 @@
         android:layout_marginBottom="@dimen/padding_main_buttons"
         android:textSize="@dimen/size_couse_button"/>
 
-    <include layout="@layout/button_course"/>
+    <include layout="@layout/button_course"
+        android:id="@+id/custom_button"/>
 
     <Button
         android:layout_width="match_parent"
@@ -49,6 +51,7 @@
         android:textColor="@color/colorWhite"
         android:padding="25dp"
         android:textSize="@dimen/size_couse_button"
-        android:layout_marginTop="@dimen/padding_main_buttons"/>
+        android:layout_marginTop="@dimen/padding_main_buttons"
+        android:onClick="viewLoginDialog"/>
 
 </LinearLayout>
