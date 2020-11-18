@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutCursBtnMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="15dp"
+    android:paddingLeft="10dp"
+    android:background="@drawable/button">
+
+    <LinearLayout
+        android:id="@+id/headerCursBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/dollarImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/dollar" />
+
+        <TextView
+            android:id="@+id/cursText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Курсы валют"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/dataTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Вывод даты" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/valueCursLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/usdValueLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/usdTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USD"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/valueUsdTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вывод" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eurValueLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/eurTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EUR"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/valueEurTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вывод" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

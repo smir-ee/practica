@@ -1,79 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/background">
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:padding="10dp">
 
     <LinearLayout
-        android:id="@+id/mainLinear"
+        android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/headerLinearLayout"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/logoImg"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:scaleType="fitCenter"
+            android:src="@drawable/museum" />
 
-            <ImageView
-                android:id="@+id/logoImg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="35dp"
-                app:srcCompat="@drawable/museum" />
-
-            <ImageView
-                android:id="@+id/logotextImg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingRight="30dp"
-                app:srcCompat="@drawable/worldskillsbank" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/labelImg"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/banksBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:contentDescription="TODO"
-                app:srcCompat="@drawable/banksbtn" />
-
-            <ImageView
-                android:id="@+id/cursBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/cursbtn" />
-
-            <ImageView
-                android:id="@+id/autBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/autbtn" />
-
-        </LinearLayout>
+            android:scaleType="fitCenter"
+            android:src="@drawable/worldskillsbank" />
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/banksBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/mappin"
+            android:padding="30dp"
+            android:text="@string/banks"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:backgroundTint="#FFFFFF" />
+
+        <include
+            android:id="@+id/cursBtn"
+            layout="@layout/activity_cursbtn" />
+
+        <Button
+            android:id="@+id/autBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button"
+            android:padding="30dp"
+            android:text="Войти"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:onClick="viewLoginDialog"/>
+    </LinearLayout>
+
+</LinearLayout>
