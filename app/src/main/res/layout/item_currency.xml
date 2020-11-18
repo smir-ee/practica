@@ -28,13 +28,14 @@
 
     <TextView
         android:id="@+id/txtValuteRus"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Американский доллар"
         android:textColor="#1C42B0"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtBuy"
         app:layout_constraintStart_toStartOf="@+id/iconValute"
         app:layout_constraintTop_toBottomOf="@+id/iconValute" />
 
@@ -42,23 +43,24 @@
         android:id="@+id/txtBuy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:drawablePadding="4dp"
         android:text="64,95"
         android:textColor="#1C42B0"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="12dp"
         android:layout_height="12dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtBuy"
-        app:layout_constraintStart_toEndOf="@+id/txtBuy"
-        app:layout_constraintTop_toTopOf="@+id/txtBuy"
+        android:layout_marginStart="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_up" />
 
     <ImageView

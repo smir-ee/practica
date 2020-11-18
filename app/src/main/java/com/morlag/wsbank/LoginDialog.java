@@ -17,6 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.morlag.wsbank.R;
+
 public class LoginDialog extends DialogFragment {
 
     public static final String TAG = "LoginDialog";
@@ -29,7 +31,7 @@ public class LoginDialog extends DialogFragment {
         etLogin = info.findViewById(R.id.etLogin);
         etPassword = info.findViewById(R.id.etPassword);
 
-
+        // Стандартная реализация диалогов
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                 .setTitle(R.string.authorization)
                 .setMessage(R.string.login_title)
@@ -39,7 +41,7 @@ public class LoginDialog extends DialogFragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String login = etLogin.getText().toString();
                         String password = etPassword.getText().toString();
-                        //send login and password
+                        //отправить логин и пароль
                     }
                 })
                 .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {

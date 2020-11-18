@@ -1,14 +1,16 @@
-package com.morlag.wsbank;
+package com.morlag.wsbank.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CurrenciesActivity extends AppCompatActivity {
+import com.morlag.wsbank.R;
+
+public class PointsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_currencies);
+        setContentView(R.layout.activity_points);
     }
 }
