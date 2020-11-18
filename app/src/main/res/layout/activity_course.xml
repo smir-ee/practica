@@ -16,7 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="1234123"
+            android:text="16.11.2020"
             android:textSize="@dimen/size_course_button"/>
 
         <TextView

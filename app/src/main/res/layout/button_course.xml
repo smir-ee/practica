@@ -33,7 +33,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/colorGray"
-            android:layout_weight="1"
+            android:layout_weight="1.8"
+            android:paddingLeft="30dp"
+            android:text="16.11.2020"
             />
 
     </LinearLayout>
@@ -62,6 +64,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorGray"
+                android:paddingLeft="6dp"
+                android:text="73,65"
                 android:textSize="@dimen/size_course_button"
                 />
 
@@ -79,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack"
                 android:text="EUR"
+
                 android:textSize="@dimen/size_course_button"
                 />
 
@@ -87,6 +92,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorGray"
+                android:paddingLeft="6dp"
+                android:text="90,75"
                 android:textSize="@dimen/size_course_button"
                 />
         </LinearLayout>

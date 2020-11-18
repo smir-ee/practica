@@ -25,25 +25,25 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/museum_icon"
+                    android:src="@drawable/usa_icon"
                     android:scaleType="fitCenter"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="EUR"
+                    android:text="USD"
                     android:textColor="@color/colorBlue"
                     />
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorBlue"
-                android:text="dollar"
-                android:padding="@dimen/padding_for_row"
-                android:textSize="@dimen/size_row"/>
+<!--             <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/colorBlue"-->
+<!--                android:text="dollar"-->
+<!--                android:padding="@dimen/padding_for_row"-->
+<!--                android:textSize="@dimen/size_row"/>-->
 
         </LinearLayout>
 
@@ -58,14 +58,14 @@
                 android:id="@+id/textView_Buy_Course"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1234"
+                android:text="76,36"
                 android:textColor="@color/colorBlue"/>
 
             <ImageView
                 android:id="@+id/arrow_Buy_Course"
                 android:layout_width="15dp"
-                android:layout_height="30dp"
-                android:src="@drawable/museum_icon"
+                android:layout_height="25dp"
+                android:src="@drawable/arrow_down"
                 android:scaleType="fitCenter"/>
 
         </LinearLayout>
@@ -81,15 +81,15 @@
                 android:id="@+id/textView_Sale_Course"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1234"
+                android:text="77,30"
                 android:textColor="@color/colorBlue"/>
 
             <ImageView
                 android:id="@+id/arrow_Sale_Course"
                 android:layout_width="15dp"
-                android:layout_height="30dp"
-                android:src="@drawable/museum_icon"
-                android:scaleType="fitCenter"/>
+                android:layout_height="25dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/arrow_up" />
 
         </LinearLayout>
 

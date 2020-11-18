@@ -5,28 +5,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background"
-    android:padding="50dp">
+    android:padding="28dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:layout_marginBottom="@dimen/padding_main_buttons">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/museum_icon"
-            android:layout_gravity="center"/>
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/padding_main_buttons"
+        android:layout_marginTop="40dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ws_bank"
-            android:layout_gravity="center"
-            />
+            app:srcCompat="@drawable/museum_icon" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ws_bank" />
+
     </LinearLayout>
 
     <Button
@@ -39,6 +37,7 @@
         android:layout_marginBottom="@dimen/padding_main_buttons"/>
     <include layout="@layout/button_course"/>
      <Button
+         android:id="@+id/btnSign"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:background="@drawable/sign_button"
