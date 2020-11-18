@@ -31,15 +31,15 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/map_icon"
+        android:layout_marginBottom="@dimen/padding_main_buttons"
         android:background="@drawable/button_radius_white"
+        android:drawableLeft="@drawable/map_icon"
+        android:onClick="onClick"
         android:padding="25dp"
-        android:text="@string/otdeleeniya"
-        android:layout_marginBottom="@dimen/padding_main_buttons"/>
+        android:text="@string/otdeleeniya" />
 
     <LinearLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:background="@drawable/button_radius_white"
         >
@@ -92,9 +92,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorBlack"
+                    android:onClick="onClickCourse"
                     android:text="USD"
-                    android:textSize="@dimen/size_couse_button"/>
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/size_couse_button" />
                 <TextView
                     android:id="@+id/textView_USD"
                     android:layout_width="wrap_content"
@@ -115,18 +116,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorBlack"
+                    android:onClick="onClickCourse"
                     android:text="EUR"
-                    android:textSize="@dimen/size_couse_button"
-                    />
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/size_couse_button" />
 
                 <TextView
                     android:id="@+id/textView_EUR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="onClickCourse"
                     android:textColor="@color/colorGray"
-                    android:textSize="@dimen/size_couse_button"
-                    />
+                    android:textSize="@dimen/size_couse_button" />
             </LinearLayout>
 
         </LinearLayout>

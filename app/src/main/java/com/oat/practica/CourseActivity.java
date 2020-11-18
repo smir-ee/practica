@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class CourseActivity extends AppCompatActivity {
 
@@ -17,7 +21,7 @@ public class CourseActivity extends AppCompatActivity {
 
 // определяем строковый массив
         final String[] courseValues = new String[] {
-                "Тугрикк", "Доллар", "Рубль", "Тенге", "Фунт стерлингов", "Крона", "Йен", "Франки",
+                "63", "65", "64", "63", "65", "63", "64", "65",
         };
 
 // используем адаптер данных
@@ -25,5 +29,8 @@ public class CourseActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, courseValues);
 
         listView.setAdapter(adapter);
+        TextView date = findViewById(R.id.textView_Date_CourseAct);
+        date.setText(new SimpleDateFormat("dd.MM.yyyy").format(new Date()));
+
     }
 }
