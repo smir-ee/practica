@@ -1,45 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/login_radius"
     android:orientation="vertical">
-    
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/signin"
-        android:fontFamily="sans-serif"
-        android:textSize="25sp"
-        android:textColor="@android:color/black"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Введите Ваш логин и пароль"
-        android:fontFamily="sans-serif-light"
-        android:layout_marginTop="15dp"
-        android:textSize="15sp"
-        android:textColor="@android:color/black"/>
-    <EditText
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/input_background"
-        android:padding="10dp"
-        android:hint="Логин"/>
-    <EditText
+        android:layout_margin="@dimen/padding_for_title"
+        android:layout_weight="1"
+        android:text="@string/login"
+        android:textAlignment="center"
+        android:textSize="@dimen/login" />
+
+    <TextView
+        android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_margin="@dimen/padding_for_title"
+        android:layout_marginBottom="@dimen/padding_for_title"
+        android:text="@string/login_ukaz"
+        android:textAlignment="center"
+        android:textSize="@dimen/size_course_button" />
+
+    <EditText
+        android:id="@+id/txtLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="@dimen/padding_for_title"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/logpassborder"
+        android:ems="10"
+        android:hint="Логин"
+        android:inputType="text"
+        android:textColor="@color/blackColor"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/logpaspol" />
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="@dimen/padding_main_buttons"
+        android:background="@drawable/logpassborder"
+        android:ems="10"
+        android:hint="Пароль"
         android:inputType="textPassword"
-        android:background="@drawable/input_background"
-        android:padding="10dp"
-        android:hint="Пароль"/>
+        android:textColor="@color/blackColor"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/logpaspol" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:background="@drawable/bordervhodotmena"
+        android:orientation="horizontal"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtOtmenaClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:text="@string/otmena"
+            android:textAlignment="center"
+            android:textColor="@color/vhodotmena"
+            android:textSize="@dimen/login" />
+
+        <TextView
+            android:id="@+id/txtVhodClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:text="@string/aut"
+            android:textAlignment="center"
+            android:textColor="@color/vhodotmena"
+            android:textSize="@dimen/login" />
+    </LinearLayout>
 
 </LinearLayout>

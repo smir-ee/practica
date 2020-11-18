@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Bank</string>
+    <string name="otdeleniaAndBank">Отделения и банкоматы</string>
+    <string name="course">Курсы валют</string>
+    <string name="vhod">ВОЙТИ</string>
+    <string name="aut">Войти</string>
+    <string name="otmena">Отмена</string>
+    <string name="login">Авторизация</string>
+    <string name="login_ukaz">Введите ваш логин и пароль</string>
 </resources>
