@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/Android/plugins/android/lib/android.jar!/images/material/icons/materialicons/attach_money/baseline_attach_money_24.xml" />
+                                      <entry key="url" value="jar:file:/D:/Android/plugins/android/lib/android.jar!/images/material/icons/materialicons/arrow_drop_down/baseline_arrow_drop_down_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="fa57d9" />
-                            <entry key="outputName" value="ic_baseline_attach_money_24" />
+                            <entry key="color" value="ff0100" />
+                            <entry key="outputName" value="ic_baseline_arrow_drop_down_24" />
                             <entry key="sourceFile" value="D:\MobileBank" />
                           </map>
                         </option>
