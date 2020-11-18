@@ -5,4 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="bankomat_on">#3FCF74</color>
     <color name="bankomat_off">#CF3F4B</color>
+    <color name="darkWhite">#ECECEC</color>
+    <color name="darkGray">#ECECEC</color>
+    <color name="White">#FFFFFF</color>
 </resources>

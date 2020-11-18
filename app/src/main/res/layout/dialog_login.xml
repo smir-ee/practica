@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkWhite">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Авторизация"
+        android:textSize="25dp"
+        android:padding="10dp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Введите Ваш логин и пароль"
+        android:textSize="15dp"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/White"
+        android:gravity="center_vertical"
+        android:hint="Логин"
+        android:inputType="text"
+        android:paddingLeft="5dp"
+        android:textColor="@color/darkGray"
+        android:textSize="15dp"
+        android:layout_margin="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:hint="Пароль"
+        android:inputType="text"
+        android:paddingLeft="5dp"
+        android:textColor="@color/darkGray"
+        android:textSize="15dp"
+        android:layout_margin="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/editText"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

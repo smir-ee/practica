@@ -28,8 +28,9 @@
             android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-
-            android:src="@drawable/usd_flag" />
+            android:src="@drawable/usd_flag"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
@@ -76,6 +77,5 @@
             android:src="@drawable/ic_arrow_down"
             app:tint="@color/bankomat_off"
             />
-
     </LinearLayout>
 </LinearLayout>
