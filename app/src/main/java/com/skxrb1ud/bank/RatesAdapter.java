@@ -1,6 +1,9 @@
 package com.skxrb1ud.bank;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
@@ -53,6 +57,7 @@ public class RatesAdapter extends BaseAdapter {
             holder.txtSell = ((TextView) v.findViewById(R.id.txtSell));
             holder.buy = ((ImageView) v.findViewById(R.id.imgBuy));
             holder.sell = ((ImageView) v.findViewById(R.id.imgSell));
+            holder.flag = ((ImageView) v.findViewById(R.id.imgIco));
             v.setTag(holder);
         }
         holder = (ViewHolder)v.getTag();
@@ -63,8 +68,18 @@ public class RatesAdapter extends BaseAdapter {
         holder.txtSell.setText(rate.getPriceSell());
         holder.buy.setImageDrawable(ContextCompat.getDrawable(c, rate.isBuyUP ? R.drawable.ratesup : R.drawable.ratesdown));
         holder.sell.setImageDrawable(ContextCompat.getDrawable(c, rate.isSellUP ? R.drawable.ratesup : R.drawable.ratesdown));
-
+        holder.flag.setImageDrawable(getFlag(rate.Code));
         return v;
+    }
+
+    public Drawable getFlag(String code) {
+        Drawable img = ContextCompat.getDrawable(c, R.drawable.flagico);
+        try {
+            img = Drawable.createFromStream(c.getAssets().open("flags/" + code + ".png"), null);
+        } catch (Exception e) {
+            try {img = Drawable.createFromStream(c.getAssets().open("flags/Unknown.png"), null); } catch(Exception ex) {}
+        }
+        return img;
     }
 
     Rate getData(int position){
