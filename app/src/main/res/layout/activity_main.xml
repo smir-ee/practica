@@ -45,6 +45,7 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/button"
             android:drawableLeft="@drawable/mappin"
+            android:onClick="viewBanksActivity"
             android:padding="30dp"
             android:text="@string/banks"
             android:textColor="#000000"

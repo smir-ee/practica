@@ -23,7 +23,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/date"
             android:textSize="15dp" />
 
         <TextView
@@ -47,10 +46,9 @@
 
     <ListView
         android:id="@+id/cursListView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-    </ListView>
+        app:layout_constraintStart_toStartOf="parent"></ListView>
 </LinearLayout>
