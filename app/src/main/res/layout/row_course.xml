@@ -5,97 +5,109 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1.5"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:padding="@dimen/padding_for_row">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/main_icon"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_icon" />
 
                 <TextView
+                    android:id="@+id/title_charcode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="EUR"
-                    android:textColor="@color/colorBlue"
-                    />
+                    android:textColor="@color/colorBlue" />
 
             </LinearLayout>
 
             <TextView
+                android:id="@+id/title_valute"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorBlue"
-                android:text="dollar"
                 android:padding="@dimen/padding_for_row"
-                android:textSize="@dimen/size_row"/>
+                android:text="dollar"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/size_row" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_weight="1"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView_Buy_Course"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1234"
-                android:textColor="@color/colorBlue"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/arrow_Buy_Course"
-                android:layout_width="15dp"
-                android:layout_height="30dp"
-                android:src="@drawable/main_icon"
-                android:scaleType="fitCenter"/>
+                <TextView
+                    android:id="@+id/textView_Buy_Course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="20  "
+                    android:textColor="@color/colorBlue" />
+
+                <ImageView
+                    android:id="@+id/arrow_Buy_Course"
+                    android:layout_width="15dp"
+                    android:layout_height="30dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/arrow" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_weight="1"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView_Sale_Course"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1234"
-                android:textColor="@color/colorBlue"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/arrow_Sale_Course"
-                android:layout_width="15dp"
-                android:layout_height="30dp"
-                android:src="@drawable/main_icon"
-                android:scaleType="fitCenter"/>
+                <TextView
+                    android:id="@+id/textView_Sale_Course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="20  "
+                    android:textColor="@color/colorBlue" />
+
+                <ImageView
+                    android:id="@+id/arrow_Sale_Course"
+                    android:layout_width="15dp"
+                    android:layout_height="30dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/arrow" />
+            </LinearLayout>
 
         </LinearLayout>
-
-
-
-
 
     </LinearLayout>
 

@@ -2,7 +2,7 @@
 <resources>
     <dimen name="radius_button">10dp</dimen>
 
-    <dimen name="size_couse_button">16dp</dimen>
+    <dimen name="size_couse_button">14dp</dimen>
     <dimen name="size_row">12dp</dimen>
     <dimen name="size_title_dialog">25dp</dimen>
     <dimen name="size_hint_dialog">12dp</dimen>

@@ -34,15 +34,16 @@
         android:layout_marginBottom="@dimen/padding_main_buttons"
         android:background="@drawable/button_radius_white"
         android:drawableLeft="@drawable/map_icon"
-        android:onClick="onClick"
+        android:onClick="onClickBank"
         android:padding="25dp"
-        android:text="@string/otdeleeniya" />
+        android:text="@string/otdeleeniya"
+        android:textSize="@dimen/size_couse_button" />
 
     <LinearLayout android:layout_width="match_parent"
+        android:id="@+id/course_button"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/button_radius_white"
-        >
+        android:background="@drawable/button_radius_white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,14 +53,14 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="0dp"
+                android:layout_width="35dp"
                 android:layout_height="30dp"
                 android:src="@drawable/course_icon"
                 android:scaleType="fitCenter"
                 android:layout_weight="1"/>
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack"
                 android:text="@string/couse"
@@ -68,11 +69,11 @@
 
             <TextView
                 android:id="@+id/textView_Date"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorGray"
                 android:layout_weight="1"
-                />
+                android:textSize="@dimen/size_couse_button" />
 
         </LinearLayout>
 
@@ -92,8 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onClickCourse"
-                    android:text="USD"
+                    android:text="USD   "
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/size_couse_button" />
                 <TextView
@@ -116,8 +116,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onClickCourse"
-                    android:text="EUR"
+                    android:text="EUR   "
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/size_couse_button" />
 
@@ -142,6 +141,9 @@
         android:onClick="onClickLogin"
         android:padding="25dp"
         android:text="@string/button_login"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/size_couse_button"
+        android:backgroundTint="@color/colorPrimaryDark"
+        />
 
 </LinearLayout>
