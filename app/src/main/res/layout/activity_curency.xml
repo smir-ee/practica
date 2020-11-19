@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".CurrencyActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E8E8E8">
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="textStart"
+            android:text="31.12.2018"
+            android:padding="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="Покупка"
+            android:padding="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="Продажа"
+            android:padding="10dp"/>
+    </LinearLayout>
+    <include layout="@layout/currency_item"/>
+    <include layout="@layout/currency_item"/>
+    <include layout="@layout/currency_item"/>
+    <include layout="@layout/currency_item"/>
+    <include layout="@layout/currency_item"/>
+    <include layout="@layout/currency_item"/>
+    <include layout="@layout/currency_item"/>
+    <include layout="@layout/currency_item"/>
+    <include layout="@layout/currency_item"/>
+</LinearLayout>
