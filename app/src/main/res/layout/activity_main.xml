@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@mipmap/fon_foreground"
     tools:context=".MainActivity">
 
     <ImageView
@@ -48,22 +48,17 @@
         app:layout_constraintVertical_bias="0.223">
     </Button>
 
-    <Button
-        android:id="@+id/buttonRate"
-        android:layout_width="358dp"
-        android:layout_height="118dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/buttonstyle"
-        android:drawableStart="@drawable/ic_baseline_attach_money_24"
-        android:padding="43dp"
-        android:text="@string/rate"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <include
+        android:id="@+id/include"
+        layout="@layout/bg_button"
+        android:layout_width="354dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="51dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonBranches"
-        app:layout_constraintVertical_bias="0.005">
-    </Button>
+        app:layout_constraintTop_toBottomOf="@+id/buttonBranches">
+
+    </include>
 
     <Button
         android:id="@+id/buttonEnter"
@@ -76,10 +71,8 @@
         android:textColor="@color/whiteButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRate"
-        app:layout_constraintVertical_bias="0.355">
+        app:layout_constraintTop_toBottomOf="@+id/include">
     </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

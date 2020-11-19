@@ -58,10 +58,9 @@ public class CourseActivity extends AppCompatActivity {
             Element newtable = table.get(0);
             Elements valute = newtable.children();
             Element item1 = valute.get(0);
-            Element name = item1.children().get(1);
-            Element fullname = item1.children().get(3);
+
             Element cost = item1.children().get(4);
-            Log.i("MyLog", "Итог " + name.text() + " " + fullname.text()+ " " + cost.text());
+            Log.i("MyLog", "Итог " + cost.text());
             for (int i = 0; i < newtable.childrenSize(); i++){
                 ListItem items = new ListItem();
                 items.setData1(valute.get(i).child(1).text());
