@@ -16,8 +16,8 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/imgIco"
-                android:layout_width="48dp"
-                android:layout_height="28dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/flagico"/>
             <TextView
                 android:id="@+id/txtCode"
