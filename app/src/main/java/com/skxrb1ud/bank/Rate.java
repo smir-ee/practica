@@ -1,5 +1,7 @@
 package com.skxrb1ud.bank;
 
+import java.text.DecimalFormat;
+
 public class Rate {
     public Float k = 1.01f;
     public String Name;
@@ -9,10 +11,10 @@ public class Rate {
     public Boolean isBuyUP = true;
     public Boolean isSellUP = true;
     public String getPriceBuy() {
-        return String.valueOf(Price);
+        return String.format("%.2f", Price);
     }
     public String getPriceSell() {
-        return String.valueOf(Price * k);
+        return String.format("%.2f", Price * k);
     }
     public String getNameText() {
         return Nominal + " " + Name;

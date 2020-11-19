@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class RatesAdapter extends BaseAdapter {
