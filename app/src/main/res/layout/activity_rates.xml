@@ -39,14 +39,12 @@
                 android:paddingStart="5dp"
                 android:layout_height="wrap_content"
                 android:text="Валюта"/>
-
             <TextView
                 android:layout_weight="20"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="wrap_content"
                 android:text="Покупка"/>
-
             <TextView
                 android:layout_weight="30"
                 android:layout_width="0dp"
