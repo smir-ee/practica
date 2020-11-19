@@ -29,6 +29,8 @@
                 android:src="@drawable/titletext"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_banks"
+            android:onClick="onClick"
             android:baselineAligned="false"
             android:layout_width="match_parent"
             android:layout_margin="8dp"
@@ -45,10 +47,12 @@
                 android:gravity="center"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:text="Отделения и банкоматы"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_rates"
+            android:onClick="onClick"
             android:baselineAligned="false"
             android:layout_width="match_parent"
             android:layout_margin="8dp"
@@ -77,6 +81,7 @@
                     android:layout_height="wrap_content"
                     android:text="Курсы валют"/>
                 <TextView
+                    android:id="@+id/txtRatesDate"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:gravity="end"
@@ -104,6 +109,7 @@
                         android:layout_height="wrap_content"
                         android:text="USD"/>
                     <TextView
+                        android:id="@+id/txtUSD"
                         android:layout_width="wrap_content"
                         android:textColor="@color/lightGray"
                         android:layout_height="wrap_content"
@@ -121,6 +127,7 @@
                         android:layout_height="wrap_content"
                         android:text="EUR"/>
                     <TextView
+                        android:id="@+id/txtEUR"
                         android:layout_width="wrap_content"
                         android:textColor="@color/lightGray"
                         android:layout_height="wrap_content"
@@ -129,6 +136,8 @@
             </LinearLayout>
         </LinearLayout>
         <Button
+            android:id="@+id/btn_login"
+            android:onClick="onClick"
             android:baselineAligned="false"
             android:layout_margin="8dp"
             android:layout_width="match_parent"

@@ -15,10 +15,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
+                android:id="@+id/imgIco"
                 android:layout_width="48dp"
                 android:layout_height="28dp"
                 android:src="@drawable/flagico"/>
             <TextView
+                android:id="@+id/txtCode"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -27,6 +29,7 @@
                 android:text="USD"/>
         </LinearLayout>
         <TextView
+            android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
@@ -40,11 +43,13 @@
         android:layout_height="match_parent"
         android:gravity="center">
         <TextView
+            android:id="@+id/txtBuy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:text="80,51"/>
         <ImageView
+            android:id="@+id/imgBuy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ratesup"/>
@@ -56,11 +61,13 @@
         android:layout_height="match_parent"
         android:gravity="center">
         <TextView
+            android:id="@+id/txtSell"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:text="79,51"/>
         <ImageView
+            android:id="@+id/imgSell"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ratesdown"/>
