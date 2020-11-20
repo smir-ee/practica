@@ -110,6 +110,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/usd_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="65.2" />
@@ -130,6 +131,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/eur_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="75.14" />
@@ -152,7 +154,6 @@
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_currency"
-        android:onClick="onClick"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_currency"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

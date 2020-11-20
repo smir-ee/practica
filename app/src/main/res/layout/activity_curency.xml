@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="#E8E8E8">
         <TextView
-            android:id="@+id/date"
+            android:id="@+id/current_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -33,13 +33,9 @@
             android:text="Продажа"
             android:padding="10dp"/>
     </LinearLayout>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
-    <include layout="@layout/currency_item"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listview_currency"/>
 </LinearLayout>
