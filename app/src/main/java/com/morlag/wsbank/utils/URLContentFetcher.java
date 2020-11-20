@@ -71,8 +71,8 @@ public class URLContentFetcher {
     public String getString(Context context, Uri uri,String method) throws IOException {
         return new String(getBytes(context, new URL(uri.toString()),method,false),"Cp1251");
     }
-    public String getString(Context context, Uri uri,String method,boolean withoutProperties) throws IOException {
-        String t = new String(getBytes(context, new URL(uri.toString()),method,withoutProperties),"Cp1251");
+    public String getString(Context context, Uri uri,String method,boolean withoutProperties, String charsetName) throws IOException {
+        String t = new String(getBytes(context, new URL(uri.toString()),method,withoutProperties),charsetName);
         return t;
     }
     public Bitmap getBitmap(Context context, URL url) throws IOException {
