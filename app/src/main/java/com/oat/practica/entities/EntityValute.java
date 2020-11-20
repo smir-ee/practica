@@ -1,13 +1,11 @@
 package com.oat.practica.entities;
 
-public class EntityValute {
-
+public class EntityValute{
     private int NumCode;
     private String CharCode;
     private int Nominal;
     private String Name;
     private double Value;
-
 
     public String getName() {
         return Name;

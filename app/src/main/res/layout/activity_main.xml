@@ -37,7 +37,8 @@
         android:padding="25dp"
         android:text="@string/otdeleeniya"
         android:layout_marginBottom="@dimen/padding_main_buttons"
-        android:textSize="@dimen/size_couse_button"/>
+        android:textSize="@dimen/size_couse_button"
+        android:onClick="viewBanksActivity"/>
 
     <include layout="@layout/button_course"
         android:id="@+id/custom_button"/>
