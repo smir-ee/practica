@@ -70,6 +70,8 @@ public class ratesParser {
                     }
                     xpp.next();
                 }
+                response_reader.close();
+                response_body.close();
             }
         } catch (Exception e) { }
         return rates;
@@ -92,6 +94,7 @@ public class ratesParser {
                             if (r1.Code.equals(r2.Code)) {
                                 r1.isSellUP = r1.Price > r2.Price;
                                 r1.isBuyUP = r1.Price * r1.k > r2.Price * r2.k;
+                                break;
                             }
                         }
                     }

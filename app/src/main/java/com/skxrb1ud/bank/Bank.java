@@ -17,7 +17,6 @@ public class Bank {
     public Boolean Status;
     public String getStatusText() {
         SimpleDateFormat df = new SimpleDateFormat("HH:mm");
-        SimpleDateFormat db = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         try {
             Date o = df.parse(TimeOpen);
             Date c = df.parse(TimeClose);
