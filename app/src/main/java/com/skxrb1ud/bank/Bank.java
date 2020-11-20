@@ -23,7 +23,6 @@ public class Bank {
             Date c = df.parse(TimeClose);
             Date n = df.parse(df.format(new Date()));
             Status = c.equals(df.parse("00:00")) && n.after(o) || n.after(o) && n.before(c);
-            Log.d("MDA", String.valueOf(c == df.parse("00:00")));
         } catch (Exception e) {}
         return Status  ? "Работает" : "Закрыто";
     }
