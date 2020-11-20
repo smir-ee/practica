@@ -19,12 +19,12 @@
             android:layout_marginStart="8dp"
             android:text="USD"
             android:textColor="#000"
-            app:layout_constraintBottom_toBottomOf="@+id/picture"
-            app:layout_constraintStart_toEndOf="@+id/picture"
-            app:layout_constraintTop_toTopOf="@+id/picture" />
+            app:layout_constraintBottom_toBottomOf="@+id/currency_picture"
+            app:layout_constraintStart_toEndOf="@+id/currency_picture"
+            app:layout_constraintTop_toTopOf="@+id/currency_picture" />
 
         <ImageView
-            android:id="@+id/picture"
+            android:id="@+id/currency_picture"
             android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
@@ -39,7 +39,7 @@
             android:textSize="5pt"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/picture" />
+            app:layout_constraintTop_toBottomOf="@+id/currency_picture" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,6 +53,7 @@
             android:textColor="@color/colorPrimary"
             android:text="64.95"/>
         <ImageView
+            android:id="@+id/buyArrow"
             android:layout_width="5pt"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
@@ -72,6 +73,7 @@
             android:textColor="@color/colorPrimary"
             />
         <ImageView
+            android:id="@+id/sellArrow"
             android:layout_width="5pt"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"

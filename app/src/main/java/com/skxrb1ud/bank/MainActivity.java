@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_login).setOnClickListener(this);
         TextView date = findViewById(R.id.current_date);
         date.setText(new SimpleDateFormat("dd.MM.yyyy").format(new Date()));
+        
     }
 
     @Override

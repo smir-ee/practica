@@ -10,10 +10,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.skxrb1ud.bank.models.Bankomat;
 import com.skxrb1ud.bank.models.Currency;
+import com.skxrb1ud.bank.runnables.BankomatsRunnable;
 import com.skxrb1ud.bank.runnables.CurrenciesRunnable;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -28,8 +31,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.SimpleFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Api{
     public static Currency[] parseCurencies(String xml){
@@ -75,6 +81,64 @@ public class Api{
             return null;
         }
     }
+    public static Bankomat[] parseBankomats(String json){
+        try {
+            JSONObject object = new JSONObject(json);
+            JSONArray arrayOfBankomats = object.getJSONArray("devices");
+            Bankomat[] bankomats = new Bankomat[arrayOfBankomats.length()];
+            for(int i = 0; i < bankomats.length;i++){
+                bankomats[i] = new Bankomat();
+                String address = arrayOfBankomats.getJSONObject(i).getString("fullAddressRu");
+
+                final Pattern pattern = Pattern.compile("(улица.+)", Pattern.MULTILINE);
+                final Matcher matcher = pattern.matcher(address);
+
+                if(matcher.find()){
+                    address = matcher.group(1);
+                }
+                bankomats[i].setAddress(address);
+                bankomats[i].setStatus(true);
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(new Date());
+                int d = calendar.get(Calendar.DAY_OF_WEEK);
+                String week = "sun";
+                switch (d){
+                    case 2:
+                        week = "mon";
+                    case 3:
+                        week = "tue";
+                    case 4:
+                        week = "wed";
+                    case 5:
+                        week = "thu";
+                    case 6:
+                        week = "fri";
+                    case 7:
+                        week = "sat";
+                }
+                bankomats[i].setTimings(arrayOfBankomats.getJSONObject(i).getJSONObject("tw").getString(week));
+            }
+            return bankomats;
+        }catch (Exception e){
+            return null;
+        }
+    }
+    public static void getBankomats(final Context context, final BankomatsRunnable callback){
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final String json = GETUTF8("https://api.privatbank.ua/p24api/infrastructure?json&atm&address=&city=%D0%91%D1%80%D0%BE%D0%B2%D0%B0%D1%80%D1%8B");
+                ((AppCompatActivity)context).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        callback.run(parseBankomats(json));
+                    }
+                });
+
+            }
+        });
+        t.start();
+    }
     public static void getCurrencies(final Context context, final Date date, final CurrenciesRunnable callback){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
         final String dateStr = simpleDateFormat.format(date);
@@ -110,6 +174,25 @@ public class Api{
             }
             in.close();
             return  response.toString();
+        }catch (Exception e){
+            return "";
+        }
+
+    }
+    public static String GETUTF8(String url){
+        try {
+            URL obj = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
+            connection.setRequestMethod("GET");
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+            return response.toString();
         }catch (Exception e){
             return "";
         }
