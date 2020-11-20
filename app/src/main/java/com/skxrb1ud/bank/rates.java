@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class rates extends AppCompatActivity {
             @Override
             public void run(ArrayList<Rate> rates) {
                 list.setAdapter(new RatesAdapter(rates.this, rates));
+                ((ProgressBar)findViewById(R.id.ratesLoading)).setVisibility(View.GONE);
             }
         });
     }
