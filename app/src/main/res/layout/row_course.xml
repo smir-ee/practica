@@ -30,22 +30,23 @@
                     android:scaleType="fitCenter"/>
 
                 <TextView
+                    android:id="@+id/valute"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="USD"
-                    android:textSize="10dp"
                     android:textColor="@color/colorBlue"
-                    />
+                    android:textSize="10dp" />
 
             </LinearLayout>
 
             <TextView
+                android:id="@+id/valutefull"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorBlue"
-                android:text="Американский доллар"
                 android:padding="@dimen/padding_for_row"
-                android:textSize="@dimen/size_row"/>
+                android:text="Американский доллар"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/size_row" />
 
         </LinearLayout>
 
