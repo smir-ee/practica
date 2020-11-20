@@ -29,12 +29,19 @@
                     android:scaleType="fitCenter"/>
 
                 <TextView
+                    android:id="@+id/charcode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="USD"
                     android:textColor="@color/colorBlue"/>
 
             </LinearLayout>
+                <TextView
+                    android:id="@+id/valute"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Американский доллар"
+                    android:textSize="12dp"/>
 
         </LinearLayout>
 
@@ -79,7 +86,7 @@
                 android:id="@+id/arrow_Sale_Course"
                 android:layout_width="15dp"
                 android:layout_height="25dp"
-                android:src="@drawable/down"
+                android:src="@drawable/up"
                 android:scaleType="fitCenter"/>
 
         </LinearLayout>

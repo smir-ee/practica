@@ -36,7 +36,8 @@
         android:text="@string/otdel"
         android:layout_marginBottom="@dimen/padding_main_buttons"/>
 
-    <include layout="@layout/button_course"/>
+    <include layout="@layout/button_course"
+        android:id="@+id/custom_button"/>
 
     <Button
         android:layout_width="match_parent"
