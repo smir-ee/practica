@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="@dimen/padding_for_dialog"
-    android:background="@drawable/button_radius_white">
+    android:paddingTop="@dimen/padding_for_dialog"
+    android:paddingLeft="@dimen/padding_for_dialog"
+    android:background="@drawable/button_radius_white"
+    android:paddingRight="@dimen/padding_for_dialog">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login"
+        android:textAlignment="center"
         android:textSize="@dimen/size_title_dialog"
         android:layout_marginBottom="@dimen/padding_for_title"
-        android:textAlignment="center"
         android:gravity="center_horizontal" />
 
     <TextView
@@ -24,18 +25,19 @@
         android:gravity="center_horizontal"
         android:layout_marginBottom="@dimen/padding_for_title"/>
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:textSize="15dp"
         android:layout_marginBottom="@dimen/padding_for_title"
-        android:hint="Логин"
-        android:textSize="13dp"/>
+        android:hint="Логин"/>
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:hint="Пароль"
-        android:textSize="13dp"/>
+        android:textSize="15dp"
+        android:hint="Пароль"/>
+
 </LinearLayout>

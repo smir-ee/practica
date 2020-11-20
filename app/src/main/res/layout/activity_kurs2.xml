@@ -2,8 +2,8 @@
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/button_radius_white">
+    android:background="@drawable/button_radius_white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,8 +16,8 @@
             android:id="@+id/textView_Date_CourseAct"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="№"
+            android:layout_weight="1.5"
+            android:text="N"
             android:textSize="@dimen/size_couse_button" />
 
         <TextView
@@ -26,7 +26,7 @@
             android:layout_weight="1"
             android:text="Покупка"
             android:gravity="center_horizontal"
-            android:textSize="@dimen/size_couse_button" />
+            android:textSize="@dimen/size_couse_button"/>
 
         <TextView
             android:layout_width="0dp"
@@ -35,9 +35,12 @@
             android:gravity="center_horizontal"
             android:text="Продажа"
             android:textSize="@dimen/size_couse_button" />
+
     </LinearLayout>
 
     <ListView
+        android:id="@+id/listView_Course"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
+
 </LinearLayout>
