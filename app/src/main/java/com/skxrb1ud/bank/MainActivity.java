@@ -18,18 +18,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    Dialog dialog;
-    EditText txtLogin;
-    EditText txtPass;
     Calendar c = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtLogin = findViewById(R.id.txtLogin);
-        txtPass = findViewById(R.id.txtPass);
     }
 
     @Override
@@ -50,20 +44,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_login:
-                dialog = new Dialog(this);
+                dialog = new LoginWindow(this);
                 dialog.create();
-                dialog.setContentView(R.layout.login_window);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
                 break;
         }
     }
+
+    LoginWindow dialog;
 
     public void closeDialog(View view) {
         dialog.cancel();
     }
 
     public void login(View view) {
+        String login = dialog.getLogin();
+        String pass = dialog.getPass();
         dialog.dismiss();
     }
 }
