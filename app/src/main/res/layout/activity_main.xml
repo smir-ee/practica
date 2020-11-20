@@ -1,56 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/main_background"
-    android:padding="50dp"
-    >
-
+    android:background="@drawable/bg"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
-        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_marginBottom="@dimen/padding_main_buttons">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/main_icon"
-            android:scaleType="fitCenter"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/main_title"
-            android:scaleType="fitCenter"/>
-
+        android:maxWidth="500dp">
+        <LinearLayout
+            android:baselineAligned="false"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/museum"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/titletext"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/btn_banks"
+            android:onClick="onClick"
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_margin="8dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/roundcornerslayout"
+            android:layout_height="100dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/pinico"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:text="Отделения и банкоматы"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/btn_rates"
+            android:onClick="onClick"
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:background="@drawable/roundcornerslayout"
+            android:layout_height="100dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:weightSum="2"
+                android:gravity="center_vertical"
+                android:background="@drawable/roundcornerslayout"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:src="@drawable/dollar"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:gravity="start"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_height="wrap_content"
+                    android:text="Курсы валют"/>
+                <TextView
+                    android:id="@+id/txtRatesDate"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:gravity="end"
+                    android:textColor="@color/lightGray"
+                    android:layout_height="wrap_content"
+                    android:text="16.11.20"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:columnCount="2"
+                android:background="@drawable/roundcornerslayout"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_height="wrap_content"
+                        android:text="USD"/>
+                    <TextView
+                        android:id="@+id/txtUSD"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/lightGray"
+                        android:layout_height="wrap_content"
+                        android:text="80"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_height="wrap_content"
+                        android:text="EUR"/>
+                    <TextView
+                        android:id="@+id/txtEUR"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/lightGray"
+                        android:layout_height="wrap_content"
+                        android:text="90"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_login"
+            android:onClick="onClick"
+            android:baselineAligned="false"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textSize="20sp"
+            android:background="@drawable/roundcornersbutton"
+            android:textColor="@color/colorWhite"
+            android:text="Войти"/>
     </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/map_icon"
-        android:background="@drawable/button_radius_white"
-        android:padding="25dp"
-        android:text="@string/otdeleeniya"
-        android:layout_marginBottom="@dimen/padding_main_buttons"
-        android:layout_marginTop="10dp"
-        android:textSize="@dimen/size_couse_button"/>
-
-    <include layout="@layout/button_course"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_radius_white"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:text="@string/button_login"
-        android:textColor="@color/colorWhite"
-        android:padding="25dp"
-        android:textSize="@dimen/size_couse_button"
-
-        android:layout_marginTop="30dp"/>
-
 </LinearLayout>
