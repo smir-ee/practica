@@ -2,7 +2,8 @@
 <resources>
     <dimen name="radius_button">10dp</dimen>
     <dimen name="size_course_button">16dp</dimen>
-    <dimen name="size_row">12dp</dimen>
+    <dimen name="size_row">11dp</dimen>
+
     <dimen name="size_title_dialog">25dp</dimen>
     <dimen name="size_hint_dialog">12dp</dimen>
     <dimen name="padding_main_buttons">20dp</dimen>

@@ -35,7 +35,8 @@
         android:padding="25dp"
         android:text="@string/offices"
         android:layout_marginBottom="@dimen/padding_main_buttons"/>
-    <include layout="@layout/button_course"/>
+    <include layout="@layout/button_course"
+        android:id="@+id/button_enjoy"/>
      <Button
          android:id="@+id/btnSign"
          android:layout_width="match_parent"
