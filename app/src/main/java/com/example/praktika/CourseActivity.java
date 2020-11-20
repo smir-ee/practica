@@ -60,20 +60,6 @@ public class CourseActivity extends AppCompatActivity {
         };
         secThread = new Thread(runnable);
         secThread.start();
-
-        /*ListItemClass items = new ListItemClass();
-        items.setData1("Доллар");
-        items.setData2("123");
-        items.setData3("542");
-        items.setData4("432");
-        arrayList.add(items);
-        items = new ListItemClass();
-        items.setData1("Доллар");
-        items.setData2("4");
-        items.setData3("53");
-        items.setData4("1");
-        arrayList.add(items);
-        adapter.notifyDataSetChanged();*/
     }
     private void getWeb()
     {
@@ -84,7 +70,6 @@ public class CourseActivity extends AppCompatActivity {
             Elements elements_from_table = our_table.children();
             Element dollar = elements_from_table.get(0);
             Elements dollar_elements = dollar.children();
-            Log.i("MyLog1", "Valute " + dollar_elements.get(0).text());
 
             for(int i = 0; i<our_table.childrenSize(); i++)
             {
