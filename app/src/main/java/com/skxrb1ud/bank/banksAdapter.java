@@ -1,6 +1,7 @@
 package com.skxrb1ud.bank;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,13 +23,13 @@ public class banksAdapter extends BaseAdapter {
      */
     private LayoutInflater LInflater;
     private ArrayList<Bank> listBanks;
-
+    Context c;
     /*
      * Конструктор класса. В данном случае лишь транслируется лист с данными
      * в лист адаптера, с которым будет производиться непосредственная работа
      */
     public banksAdapter(Context context, ArrayList<Bank> data){
-
+        c = context;
         listBanks = data;
         LInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -87,9 +88,10 @@ public class banksAdapter extends BaseAdapter {
         holder = (ViewHolder)v.getTag();
         Bank bank = getData(position);
         holder.address.setText(bank.Address);
-        holder.time.setText(bank.Time);
+        holder.time.setText(bank.Time());
         holder.type.setText(bank.Type);
         holder.status.setText(bank.getStatusText());
+        holder.status.setTextColor(bank.Status ? c.getResources().getColor(R.color.bankOn, null) : c.getResources().getColor(R.color.bankOff, null));
 
         return v;
     }

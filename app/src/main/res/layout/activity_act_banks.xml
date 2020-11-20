@@ -38,6 +38,7 @@
             android:text="Отделения и банкоматы"/>
     </LinearLayout>
     <ListView
+        android:id="@+id/listBanks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/bank_list_item"/>

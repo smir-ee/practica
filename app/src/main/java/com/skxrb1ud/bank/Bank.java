@@ -1,18 +1,38 @@
 package com.skxrb1ud.bank;
 
+import android.util.Log;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Bank {
     public String Address;
-    public String Time;
+    public String TimeOpen;
+    public String TimeClose;
+    public String Time () {
+        return TimeOpen + "-" + TimeClose;
+    }
     public String Type;
     public Boolean Status;
     public String getStatusText() {
-        return Status ? "Работает" : "Закрыто";
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat db = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+        try {
+            Date o = df.parse(TimeOpen);
+            Date c = df.parse(TimeClose);
+            Date n = df.parse(df.format(new Date()));
+            Status = c.equals(df.parse("00:00")) && n.after(o) || n.after(o) && n.before(c);
+            Log.d("MDA", String.valueOf(c == df.parse("00:00")));
+        } catch (Exception e) {}
+        return Status  ? "Работает" : "Закрыто";
     }
     public Bank () {}
-    public  Bank (String address, String time, String type, Boolean status) {
+    public  Bank (String address, String type, String openTime, String closeTime) {
         Address = address;
-        Time = time;
+        Status = false;
         Type = type;
-        Status = status;
+        TimeOpen = openTime;
+        TimeClose = closeTime;
     }
 }
