@@ -36,7 +36,6 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                 BankomatsAdapter adapter = new BankomatsAdapter(HomeActivity.this,bankomats);
                 recyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this,RecyclerView.VERTICAL,false));
                 recyclerView.setAdapter(adapter);
-                
             }
         });
     }
@@ -47,6 +46,5 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
         map.getUiSettings().setMyLocationButtonEnabled(false);
         LatLng brovari = new LatLng(50.5064267, 30.7772408);
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(brovari,13.5f));
-
     }
 }

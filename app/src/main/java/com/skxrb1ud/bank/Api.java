@@ -127,7 +127,7 @@ public class Api{
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                final String json = GETUTF8("https://api.privatbank.ua/p24api/infrastructure?json&atm&address=&city=%D0%91%D1%80%D0%BE%D0%B2%D0%B0%D1%80%D1%8B");
+                final String json = GET("https://api.privatbank.ua/p24api/infrastructure?json&atm&address=&city=%D0%91%D1%80%D0%BE%D0%B2%D0%B0%D1%80%D1%8B","utf-8");
                 ((AppCompatActivity)context).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -145,7 +145,7 @@ public class Api{
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                final String xml = GET("https://www.cbr.ru/scripts/XML_daily.asp?date_req="+dateStr);
+                final String xml = GET("https://www.cbr.ru/scripts/XML_daily.asp?date_req="+dateStr,"windows-1251");
                 ((AppCompatActivity)context).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -157,7 +157,7 @@ public class Api{
         });
         t.start();
     }
-    public static String GET(String url){
+    public static String GET(String url, String charset){
         try {
             URL obj = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
@@ -165,7 +165,7 @@ public class Api{
             connection.setRequestMethod("GET");
 
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(),"windows-1251"));
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(),charset));
             String inputLine;
             StringBuffer response = new StringBuffer();
 
@@ -174,25 +174,6 @@ public class Api{
             }
             in.close();
             return  response.toString();
-        }catch (Exception e){
-            return "";
-        }
-
-    }
-    public static String GETUTF8(String url){
-        try {
-            URL obj = new URL(url);
-            HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
-            connection.setRequestMethod("GET");
-            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-            return response.toString();
         }catch (Exception e){
             return "";
         }
