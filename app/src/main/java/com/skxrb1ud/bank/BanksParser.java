@@ -89,7 +89,9 @@ public class BanksParser {
                         address = ((JSONObject)arrBanks.get(i)).getString("fullAddressRu");
                     }
                     String type = ((JSONObject)arrBanks.get(i)).getString("type").equals("ATM") ? "Банкомат" : "Отделение";
-                    banks.add(new Bank(address, type, time[0], time[1]));
+                    double lt = Double.parseDouble(((JSONObject)arrBanks.get(i)).getString("latitude"));
+                    double lng = Double.parseDouble(((JSONObject)arrBanks.get(i)).getString("longitude"));
+                    banks.add(new Bank(address, ((JSONObject)arrBanks.get(i)).getString("fullAddressRu"), ((JSONObject)arrBanks.get(i)).getString("placeRu"), type, time[0], time[1], lt, lng));
                 }
             }
         } catch (Exception e) { }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
     <LinearLayout
+        android:id="@+id/topBar"
         android:background="#cccccc"
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -31,25 +33,50 @@
                 android:text="Главное меню"
                 android:textColor="@color/textBlue"/>
         </LinearLayout>
-        <TextView
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Отделения и банкоматы"/>
     </LinearLayout>
-    <FrameLayout
+    <fragment
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/map"
+        android:src="@drawable/museum"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ListView
-            android:id="@+id/listBanks"
+        android:layout_height="222dp"
+        tools:context=".MapsActivity"
+        android:minHeight="100dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.skxrb1ud.bank.CustomLayout
+            android:padding="5dp"
+            android:id="@+id/txtBanksHeader"
+            android:background="#cccccc"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/rates_list_item"/>
-        <ProgressBar
-            android:id="@+id/banksLoading"
-            android:visibility="visible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
-    </FrameLayout>
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Отделения и банкоматы"/>
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/resize"
+                android:layout_width="18dp"
+                android:layout_height="18dp"/>
+
+        </com.skxrb1ud.bank.CustomLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/listBanks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/bank_list_item"/>
+            <ProgressBar
+                android:id="@+id/banksLoading"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+    </LinearLayout>
 </LinearLayout>
