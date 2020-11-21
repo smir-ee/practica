@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,33 +37,27 @@ public class CourseActivity extends AppCompatActivity {
     private ArrayList<EntityValute> valuteArrayListLast;
     private String dateLast;
     private SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getSupportActionBar().hide();
         setContentView(R.layout.activity_course);
+
+        listView = (ListView) findViewById(R.id.listView_Course);
         valuteArrayList = MainActivity.getValuteArrayList();
-        try {
-            Calendar calendar = new GregorianCalendar();
-            calendar.setTime(new Date());
-            TextView date = (TextView) findViewById(R.id.textView_Date_CourseAct);
-            date.setText(format.format(calendar.getTime()));
 
-            calendar.add(Calendar.DAY_OF_MONTH, -1);
-            dateLast = format.format(calendar.getTime());
-            String url = "https://www.cbr.ru/scripts/XML_daily.asp?date_req=";
-            XmlParser parser = new XmlParser();
-            if (parser.Parsing(new getValutes().execute(url, dateLast).get()))
-                valuteArrayListLast = parser.getEntityValutes();
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(new Date());
+        TextView date = (TextView) findViewById(R.id.textView_Date_CourseAct);
+        date.setText(format.format(calendar.getTime()));
 
-        ListView listView = (ListView) findViewById(R.id.listView_Course);
-        customAdapter adapter = new customAdapter(getApplicationContext());
-        listView.setAdapter(adapter);
+        calendar.add(Calendar.DAY_OF_MONTH, -1);
+        String dateLast = format.format(calendar.getTime());
+
+        new getValutes().execute(getResources().getString(R.string.server_CB), dateLast);
     }
+
     private class getValutes extends AsyncTask<String, Void, String> {
 
         @Override
@@ -83,6 +79,16 @@ public class CourseActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             return null;
+        }
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            XmlParser parser = new XmlParser();
+            if (parser.Parsing(s))
+                valuteArrayListLast = parser.getEntityValutes();
+
+            customAdapter adapter = new customAdapter(getApplicationContext());
+            listView.setAdapter(adapter);
         }
     }
 

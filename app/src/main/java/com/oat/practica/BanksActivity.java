@@ -1,30 +1,157 @@
 package com.oat.practica;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.net.http.HttpResponseCache;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class BanksActivity extends AppCompatActivity {
+
+    private ArrayList<EntityBanks> entityBanks;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banks);
-        // получаем экземпляр элемента ListView
-        ListView listView = findViewById(R.id.listView_Banks);
 
-// определяем строковый массив
-        final String[] bankNames = new String[] {
-                "Ул. Вавилова, 32", "ул. Репина, 23", "Ул. Воробьева, 64", "Ул. Объективного, 35", "Ул. Васьки Громова, 325",
-                "Ул. Гончарова, 65", "Ул. Орбакайте, 35", "Ул. Земли и Пуха, 256"
-        };
+        String url = getResources().getString(R.string.api_UA);
+        new parsingJson().execute(url);
+    }
+    //  Строки
+    private class parsingJson extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                HttpResponseCache cache = HttpResponseCache.install(getCacheDir(), 10000L);
+                HttpURLConnection connection = (HttpURLConnection) new URL(strings[0]).openConnection();
+                connection.setRequestMethod("GET");
 
-// используем адаптер данных
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, bankNames);
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String line = "";
+                StringBuilder builder = new StringBuilder();
 
-        listView.setAdapter(adapter);
+                while ((line = bufferedReader.readLine()) != null)
+                    builder.append(line);
+
+                bufferedReader.close();
+
+                return builder.toString();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            JsonParser parserUA = new JsonParser();
+            if (parserUA.parsingData(s))
+                entityBanks = parserUA.getBanksArrayList();
+
+            customAdapter adapter = new customAdapter(getApplicationContext());
+            listView = (ListView) findViewById(R.id.listView_Banks);
+            listView.setAdapter(adapter);
+
+        }
+    }
+
+    private class customAdapter extends ArrayAdapter{
+
+        public customAdapter(@NonNull Context context) {
+            super(context, R.layout.row_bank, entityBanks);
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+
+            try {
+                if (convertView == null){
+                    LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                    convertView = (View) inflater.inflate(R.layout.row_bank, null);
+                }
+
+                String time = "";
+                EntityBanks banks = (EntityBanks) getItem(position);
+                Calendar calendar = new GregorianCalendar();
+                calendar.setTime(new Date());
+                JSONObject jsonObject = new JSONObject(banks.getTimeWork());
+                switch (calendar.get(Calendar.DAY_OF_WEEK)){
+                    case 2:
+                        time = jsonObject.getString("mon");
+                        break;
+                    case 3:
+                        time = jsonObject.getString("tue");
+                        break;
+                    case 4:
+                        time = jsonObject.getString("wed");
+                        break;
+                    case 5:
+                        time = jsonObject.getString("thu");
+                        break;
+                    case 6:
+                        time = jsonObject.getString("fri");
+                        break;
+                    case 7:
+                        time = jsonObject.getString("sat");
+                        break;
+                    case 1:
+                        time = jsonObject.getString("sun");
+                        break;
+                }
+                String[] address = banks.getAddress().split(",");
+                String[] house = time.split(" - ");
+
+                TextView status = (TextView) convertView.findViewById(R.id.textView_status_bank);
+
+                double nowHouse = Double.parseDouble(new SimpleDateFormat("HH.mm").format(calendar.getTime()));
+                if (Double.parseDouble(house[0].replace(':','.')) < nowHouse &&
+                        nowHouse < Double.parseDouble(house[1].replace(':','.'))){
+                    status.setText(getResources().getString(R.string.open));
+                    status.setTextColor(getResources().getColor(R.color.colorGreen));
+                }
+                else {
+                    status.setText(getResources().getString(R.string.closed));
+                    status.setTextColor(getResources().getColor(R.color.colorRed));
+                }
+
+                ((TextView) convertView.findViewById(R.id.textView_worktime_bank)).setText(house[0] + "-" + (house[1].replace("23:59", "00:00")));
+                ((TextView) convertView.findViewById(R.id.textView_address_bank)).setText(address[4] + ", " + address[5]);
+                ((TextView) convertView.findViewById(R.id.textView_type_bank)).setText(banks.getType());
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return convertView;
+        }
     }
 }

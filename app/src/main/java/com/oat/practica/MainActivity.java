@@ -34,24 +34,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+
         usd = (TextView) findViewById(R.id.textView_USD);
         eur = (TextView) findViewById(R.id.textView_EUR);
 
         TextView date = (TextView) findViewById(R.id.textView_Date);
-        String url = "https://www.cbr.ru/scripts/XML_daily.asp?date_req=";
         String dateStr = new SimpleDateFormat("dd.MM.yyyy").format(new Date());
         date.setText(dateStr);
 
         try {
             DecimalFormat format = new DecimalFormat("0.00");
             XmlParser parser = new XmlParser();
-            String response = new getValutes().execute(url, dateStr).get();
+            String response = new getValutes().execute(getResources().getString(R.string.server_CB), dateStr).get();
             if (parser.Parsing(response)){
                 valuteArrayList = parser.getEntityValutes();
                 for (EntityValute valute : valuteArrayList){
-                    String cha = valute.getCharCode();
                     if (valute.getCharCode().equalsIgnoreCase("USD"))
                         usd.setText(format.format(valute.getValue()));
                     if (valute.getCharCode().equalsIgnoreCase("EUR"))
@@ -70,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     public void onClickBank (View view){
         Intent i = new Intent(MainActivity.this, BanksActivity.class);
         startActivity(i);
@@ -79,11 +78,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void onClickLogin (View view){
-        //Intent i = new Intent(MainActivity.this, LoginActivity.class);
-        //startActivity(i);
         CustomDialog dialog = new CustomDialog();
         dialog.show(getSupportFragmentManager(),"Login");
     }
+
     private class getValutes extends AsyncTask<String, Void, String> {
 
         @Override
