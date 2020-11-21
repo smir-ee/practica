@@ -40,8 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_login:
-                LoginDialog loginDialog = new LoginDialog();
-                loginDialog.show(getSupportFragmentManager(),null);
+//                LoginDialog loginDialog = new LoginDialog();
+//                loginDialog.show(getSupportFragmentManager(),null);
+                intent = new Intent(this,HomeActivity.class);
+                startActivity(intent);
                 break;
         }
 
