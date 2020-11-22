@@ -50,7 +50,7 @@ public class Bankomat {
             lat = Double.parseDouble(latitude);
             lon = Double.parseDouble(longitude);
 
-            return new LatLng(lat,lon);
+            return new LatLng(lon,lat);
         }
         catch (Exception ex){
             Log.d(TAG, "getLatLng: ", ex);
