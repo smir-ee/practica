@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_api" />
         <activity android:name=".activities.PointsActivity"
             android:parentActivityName=".activities.MainActivity"></activity>
         <activity android:name=".activities.CurrenciesActivity"

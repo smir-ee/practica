@@ -9,26 +9,30 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.morlag.wsbank.R;
 import com.morlag.wsbank.models.Bankomat;
-import com.morlag.wsbank.models.Valute;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class BankomatsAdapter extends RecyclerView.Adapter<BankomatsAdapter.BankomatHolder> {
     Context mContext; // Необходим для наполнения view по шаблону
     ArrayList<Bankomat> mBankomats; // Собственно, данные
+    OnLatLngSender mSender;
+    public interface OnLatLngSender {
+        public void sendLatLng(LatLng latLng);
+    }
 
-    public BankomatsAdapter(Context context, Bankomat[] bankomats){
+    public BankomatsAdapter(Context context, Bankomat[] bankomats, OnLatLngSender onLatLngSender){
         mContext = context;
         mBankomats = new ArrayList<>(Arrays.asList(bankomats));
+        mSender = onLatLngSender;
     }
-    public BankomatsAdapter(Context context, ArrayList<Bankomat> bankomats){
+    public BankomatsAdapter(Context context, ArrayList<Bankomat> bankomats, OnLatLngSender onLatLngSender){
         mContext = context;
         mBankomats = bankomats;
+        mSender = onLatLngSender;
     }
 
     @NonNull
@@ -55,6 +59,7 @@ public class BankomatsAdapter extends RecyclerView.Adapter<BankomatsAdapter.Bank
         TextView type;
         TextView isWorkNow;
         TextView workingTime;
+        LatLng latLng;
 
         public BankomatHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,16 +67,23 @@ public class BankomatsAdapter extends RecyclerView.Adapter<BankomatsAdapter.Bank
             type = itemView.findViewById(R.id.txtType);
             isWorkNow = itemView.findViewById(R.id.txtIsWork);
             workingTime = itemView.findViewById(R.id.txtWorkingTime);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mSender.sendLatLng(latLng);
+                }
+            });
         }
 
         public void bind(Bankomat b){ // Устанавливает актуальные значения
-            String[] adr = b.getFullAddressRu().split(",");
-            address.setText(adr.length >= 2 ? b.getCityRU() + ", " + adr[adr.length-2] + ", " + adr[adr.length-1] : b.getFullAddressRu());
+            address.setText(b.getNotFullAddressRu());
             type.setText(b.getType().equals("ATM") ? "Банкомат" : "Отделение");
             boolean isWork = b.isWorkNow();
             isWorkNow.setText(isWork ? "Работает" : "Закрыто");
             isWorkNow.setTextColor(mContext.getResources().getColor(isWork ? android.R.color.holo_green_dark : android.R.color.holo_red_dark));
-            workingTime.setText(b.getWorkTimeToday());
+            String time = b.getWorkTimeToday();
+            workingTime.setText(time.equals("00:00 - 00:00") ? "Сегодня не работает" : String.format("Время работы: %s",time));
+            latLng = b.getLatLng();
         }
     }
 }

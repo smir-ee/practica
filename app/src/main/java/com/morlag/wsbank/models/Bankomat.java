@@ -2,6 +2,8 @@ package com.morlag.wsbank.models;
 
 import android.util.Log;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -13,6 +15,7 @@ public class Bankomat {
     private String longitude;
     private String[] tw;
     private String fullAddressRu;
+    private String notFullAddressRu;
     private String placeRu;
     private String cityRU;
 
@@ -37,7 +40,23 @@ public class Bankomat {
 
     // Время работы банкомата
     public String getWorkTimeToday(){
-        return tw[new Date().getDay()-1];
+        return tw[new Date().getDay()];
+    }
+
+    public LatLng getLatLng(){
+        Double lat = 0.0;
+        Double lon = 0.0;
+        try {
+            lat = Double.parseDouble(latitude);
+            lon = Double.parseDouble(longitude);
+
+            return new LatLng(lat,lon);
+        }
+        catch (Exception ex){
+            Log.d(TAG, "getLatLng: ", ex);
+        }
+
+        return null;
     }
 
     public String getType() {
@@ -74,6 +93,14 @@ public class Bankomat {
 
     public void setFullAddressRu(String fullAddressRu) {
         this.fullAddressRu = fullAddressRu;
+    }
+
+    public String getNotFullAddressRu() {
+        return notFullAddressRu;
+    }
+
+    public void setNotFullAddressRu(String notFullAddressRu) {
+        this.notFullAddressRu = notFullAddressRu;
     }
 
     public String getPlaceRu() {
