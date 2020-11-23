@@ -97,6 +97,8 @@ public class Api{
                     address = matcher.group(1);
                 }
                 bankomats[i].setAddress(address);
+                bankomats[i].setLatitude(arrayOfBankomats.getJSONObject(i).getDouble("latitude"));
+                bankomats[i].setLongitude(arrayOfBankomats.getJSONObject(i).getDouble("longitude"));
                 bankomats[i].setStatus(true);
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(new Date());

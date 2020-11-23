@@ -4,6 +4,8 @@ public class Bankomat {
     private String address;
     private String timings;
     private boolean status;
+    private double latitude;
+    private double longitude;
 
     public String getAddress() {
         return address;
@@ -30,5 +32,21 @@ public class Bankomat {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

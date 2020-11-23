@@ -29,6 +29,16 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.mapView);
         mapFragment.getMapAsync(this);
 
+
+    }
+
+    @Override
+    public void onMapReady(final GoogleMap googleMap) {
+        map = googleMap;
+        map.getUiSettings().setMyLocationButtonEnabled(false);
+        LatLng brovari = new LatLng(50.5064267, 30.7772408);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(brovari,13.5f));
+
         final RecyclerView recyclerView = findViewById(R.id.bankomats_list);
         Api.getBankomats(this, new BankomatsRunnable() {
             @Override
@@ -36,15 +46,13 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                 BankomatsAdapter adapter = new BankomatsAdapter(HomeActivity.this,bankomats);
                 recyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this,RecyclerView.VERTICAL,false));
                 recyclerView.setAdapter(adapter);
+                for (Bankomat bank:
+                     bankomats) {
+                    googleMap.addMarker(new MarkerOptions()
+                            .position(new LatLng(bank.getLongitude(),bank.getLatitude()))
+                            .title(bank.getAddress()));
+                }
             }
         });
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        map = googleMap;
-        map.getUiSettings().setMyLocationButtonEnabled(false);
-        LatLng brovari = new LatLng(50.5064267, 30.7772408);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(brovari,13.5f));
     }
 }
