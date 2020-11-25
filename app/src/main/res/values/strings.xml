@@ -1,7 +1,6 @@
 <resources>
     <string name="server_CB">https://www.cbr.ru/scripts/XML_daily.asp?date_req=</string>
-    <string name="api_UA">https://api.privatbank.ua/p24api/infrastructure?json&amp;atm&amp;address=&amp;city=нежин</string>
-
+    <string name="api_UA">https://api.privatbank.ua/p24api/infrastructure?json&amp;atm&amp;address=&amp;city=харьков</string>
     <string name="app_name">practica</string>
     <string name="otdeleeniya">Отделения и банкоматы</string>
     <string name="button_login">Войти</string>
