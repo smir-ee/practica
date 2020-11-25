@@ -28,7 +28,7 @@ public class Bank {
             Date n = df.parse(df.format(new Date()));
             Status = c.equals(df.parse("00:00")) && n.after(o) || n.after(o) && n.before(c);
         } catch (Exception e) {}
-        return Status  ? "Работает" : "Закрыто";
+        return Status ? "Работает" : "Закрыто";
     }
     public Bank () {}
     public  Bank (String address, String fulladdress, String description, String type, String openTime, String closeTime, double lt, double lng) {

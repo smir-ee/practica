@@ -35,13 +35,9 @@ public class ratesParser {
         try {
             URL cbrf = new URL("https://www.cbr.ru/scripts/XML_daily.asp?date_req=" + date);
             HttpsURLConnection connection = (HttpsURLConnection)cbrf.openConnection();
-            connection.setRequestProperty("User-Agent","banks-app");
             if (connection.getResponseCode() == 200) {
-                InputStream response_body = connection.getInputStream();
-                InputStreamReader response_reader = new InputStreamReader(response_body, "windows-1251");
-                XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-                factory.setNamespaceAware(true);
-                XmlPullParser xpp = factory.newPullParser();
+                InputStreamReader response_reader = new InputStreamReader(connection.getInputStream(), "windows-1251");
+                XmlPullParser xpp = XmlPullParserFactory.newInstance().newPullParser();
                 xpp.setInput(response_reader);
 
                 String tmp = "";
@@ -71,7 +67,6 @@ public class ratesParser {
                     xpp.next();
                 }
                 response_reader.close();
-                response_body.close();
             }
         } catch (Exception e) { }
         return rates;
