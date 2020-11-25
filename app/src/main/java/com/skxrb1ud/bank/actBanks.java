@@ -65,10 +65,13 @@ public class actBanks extends AppCompatActivity implements OnMapReadyCallback {
                         return true;
                     case MotionEvent.ACTION_MOVE:
                         if (map.getView().getHeight() + (event.getY() + header.getHeight() / 2) <= (main.getHeight() - header.getHeight() - findViewById(R.id.topBar).getHeight())) {
-                            map.getView().setMinimumHeight((int)(map.getView().getHeight() + (event.getY() + header.getHeight() / 2)));
-                            map.getView().setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(map.getView().getHeight() + (event.getY() + header.getHeight() / 2))));
+                            if (map.getView().getHeight() + (event.getY() + header.getHeight() / 2) >= 0) {
+                                map.getView().setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(map.getView().getHeight() + (event.getY() + header.getHeight() / 2))));
+                            } else  {
+                                map.getView().setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,0));
+                            }
                         } else {
-                            map.getView().setMinimumHeight((int)(main.getHeight() - header.getHeight() - findViewById(R.id.topBar).getHeight()));
+                            map.getView().setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(main.getHeight() - header.getHeight() - findViewById(R.id.topBar).getHeight())));
                         }
                         return true;
                     case MotionEvent.ACTION_UP:
