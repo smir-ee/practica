@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_bankomats_list:
-                Intent intent = new Intent(this,BankomatsActivity.class);
+                Intent intent = new Intent(this,HomeActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_currency:
