@@ -3,6 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:minWidth="350dp"
+    android:background="@drawable/corner"
     android:orientation="vertical">
     
     <TextView
@@ -24,6 +26,7 @@
         android:textSize="15sp"
         android:textColor="@android:color/black"/>
     <EditText
+        android:id="@+id/loginInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -33,6 +36,7 @@
         android:padding="10dp"
         android:hint="Логин"/>
     <EditText
+        android:id="@+id/passwordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -42,5 +46,18 @@
         android:background="@drawable/input_background"
         android:padding="10dp"
         android:hint="Пароль"/>
-
+    <Button
+        android:background="@android:color/transparent"
+        android:id="@+id/okay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="Ok"/>
+    <Button
+        android:background="@android:color/transparent"
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="Cancel"/>
 </LinearLayout>

@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,10 +41,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_login:
-//                LoginDialog loginDialog = new LoginDialog();
-//                loginDialog.show(getSupportFragmentManager(),null);
-                intent = new Intent(this,HomeActivity.class);
-                startActivity(intent);
+                LoginDialog loginDialog = new LoginDialog(this) {
+                    @Override
+                    public void run(String login, String password) {
+
+                    }
+                };
+                loginDialog.show();
+                //loginDialog.show(getSupportFragmentManager(),null);
+//                intent = new Intent(this,HomeActivity.class);
+//                startActivity(intent);
                 break;
         }
 
