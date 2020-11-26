@@ -23,7 +23,12 @@ public class BankomatsActivity extends AppCompatActivity {
         Api.getBankomats(this, new BankomatsRunnable() {
             @Override
             public void run(Bankomat[] bankomats) {
-                BankomatsAdapter adapter = new BankomatsAdapter(BankomatsActivity.this,bankomats);
+                BankomatsAdapter adapter = new BankomatsAdapter(BankomatsActivity.this, bankomats, new TRunnable<Bankomat>() {
+                    @Override
+                    public void run(Bankomat data) {
+
+                    }
+                });
                 recyclerView.setLayoutManager(new LinearLayoutManager(BankomatsActivity.this,RecyclerView.VERTICAL,false));
                 recyclerView.setAdapter(adapter);
             }

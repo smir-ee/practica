@@ -43,7 +43,13 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
         Api.getBankomats(this, new BankomatsRunnable() {
             @Override
             public void run(Bankomat[] bankomats) {
-                BankomatsAdapter adapter = new BankomatsAdapter(HomeActivity.this,bankomats);
+                BankomatsAdapter adapter = new BankomatsAdapter(HomeActivity.this, bankomats, new TRunnable<Bankomat>() {
+                    @Override
+                    public void run(Bankomat data) {
+                        LatLng point = new LatLng(data.getLongitude(), data.getLatitude());
+                        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point,13.5f));
+                    }
+                });
                 recyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this,RecyclerView.VERTICAL,false));
                 recyclerView.setAdapter(adapter);
                 for (Bankomat bank:
