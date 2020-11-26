@@ -26,7 +26,7 @@ public class JsonParser {
             JSONObject main = new JSONObject(json);
             JSONArray jsonArray = new JSONArray(main.getString("devices"));
 
-            for (int i =0; i < jsonArray.length(); i++){
+            for (int i = 0; i < jsonArray.length(); i++){
                 JSONObject jsonObject = jsonArray.optJSONObject(i);
                 EntityBanks banks = new EntityBanks();
 
@@ -35,6 +35,7 @@ public class JsonParser {
                 banks.setPlace(jsonObject.getString("placeRu"));
                 banks.setType(jsonObject.getString("type"));
                 banks.setTimeWork(jsonObject.getString("tw"));
+                banks.setPosition(jsonObject.getDouble("longitude"), jsonObject.getDouble("latitude"));
 
                 banksArrayList.add(banks);
             }
