@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
-public class LoginWindow extends Dialog implements DialogInterface.OnClickListener {
+public class LoginWindow extends Dialog {
 
     Context context;
     EditText txtLogin;
@@ -42,9 +42,4 @@ public class LoginWindow extends Dialog implements DialogInterface.OnClickListen
 
     String getLogin() { return  txtLogin.getText().toString(); }
     String getPass() { return  txtPass.getText().toString(); }
-
-    @Override
-    public void onClick(DialogInterface dialog, int which) {
-
-    }
 }

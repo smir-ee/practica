@@ -2,6 +2,7 @@ package com.skxrb1ud.bank;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -60,6 +61,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void login(View view) {
         String login = dialog.getLogin();
         String pass = dialog.getPass();
+        if(login.equals("user") && pass.equals("123456")) {
+            Intent intent = new Intent(this, activityApp.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
+        }
         dialog.dismiss();
     }
 }

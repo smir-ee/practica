@@ -6,10 +6,10 @@
     android:layout_height="wrap_content"
     android:layout_gravity="fill_horizontal"
     android:orientation="vertical"
-    android:background="@drawable/roundcornerswindow"
-    android:padding="20dp">
+    android:background="@drawable/roundcornerswindow">
 
     <TextView
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -21,30 +21,29 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="Введите Ваш логин и пароль"
-        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="20dp"
         android:textSize="15sp"
         android:textColor="@color/colorBlack"/>
     <EditText
         android:id="@+id/txtLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="20dp"
         android:padding="10dp"
         android:hint="Логин"/>
     <EditText
         android:id="@+id/txtPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
         android:inputType="textPassword"
         android:padding="10dp"
         android:hint="Пароль"/>
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="2">
