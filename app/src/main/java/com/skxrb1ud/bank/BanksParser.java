@@ -40,7 +40,6 @@ public class BanksParser {
         try {
             URL URLBanks = new URL("https://api.privatbank.ua/p24api/infrastructure?json&atm&address=&city=" + city);
             HttpsURLConnection connection = (HttpsURLConnection)URLBanks.openConnection();
-            connection.setRequestProperty("User-Agent","banks-app");
             if (connection.getResponseCode() == 200) {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String json = "";
@@ -49,8 +48,7 @@ public class BanksParser {
                     buff.append(json);
                 }
                 reader.close();
-                json = buff.toString();
-                JSONObject object = new JSONObject(json);
+                JSONObject object = new JSONObject(buff.toString());
                 JSONArray arrBanks = object.getJSONArray("devices");
                 for (int i = 0; i < arrBanks.length(); i++) {
                     JSONObject bank = arrBanks.getJSONObject(i);
@@ -77,7 +75,7 @@ public class BanksParser {
                             break;
                         case 7:
                             tw = days.getString("sun");
-                            break;
+                        break;
                     }
                     String[] time = tw.split(" - ");
                     String address = "";
