@@ -42,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 viewLoginDialog(v);
             }
         });
+
+        findViewById(R.id.btnOffices).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewBanksActivity(v);
+            }
+        });
+
         TextView usd = (TextView) findViewById(R.id.textView_USD);
         eur = (TextView) findViewById(R.id.textView_EUR);
 

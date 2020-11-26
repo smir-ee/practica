@@ -28,6 +28,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnOffices"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/map_pin"
