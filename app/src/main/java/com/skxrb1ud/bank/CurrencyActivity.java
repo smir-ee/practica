@@ -5,7 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.graphics.Matrix;
+import android.content.Intent;
 import android.net.http.HttpResponseCache;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,12 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.skxrb1ud.bank.MainActivity;
-import com.skxrb1ud.bank.ParserXml;
-import com.skxrb1ud.bank.R;
 import com.skxrb1ud.bank.models.EntityValute;
-
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -64,13 +59,10 @@ public class CurrencyActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ListView listView = (ListView) findViewById(R.id.listview_currency);
+        ListView listView = (ListView) findViewById(R.id.lv_currency);
         customAdapter adapter = new customAdapter(getApplicationContext());
         listView.setAdapter(adapter);
     }
-
-
-
 
     private class getValutes extends AsyncTask<String, Void, String> {
 
@@ -88,12 +80,24 @@ public class CurrencyActivity extends AppCompatActivity {
                         builder.append(line);
                     return builder.toString();
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;
         }
+    }
+
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.btnBack:
+                viewMainActivity(v);
+                break;
+        }
+    }
+
+    private void viewMainActivity(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     private class customAdapter extends ArrayAdapter {
@@ -144,7 +148,6 @@ public class CurrencyActivity extends AppCompatActivity {
                     saleArrow.setVisibility(View.GONE);
                 }
             }
-
 
             return convertView;
         }

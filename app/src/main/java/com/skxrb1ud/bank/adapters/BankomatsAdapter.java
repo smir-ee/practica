@@ -11,15 +11,19 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.skxrb1ud.bank.Banks;
 import com.skxrb1ud.bank.R;
+import com.skxrb1ud.bank.TRunnable;
 import com.skxrb1ud.bank.models.Bankomat;
 
 public class BankomatsAdapter extends RecyclerView.Adapter<BankomatsAdapter.ViewHolder> {
     Context mContext;
-    Bankomat[] mBankomats;
-    public BankomatsAdapter(Context context, Bankomat[] bankomats){
+    Banks[] mBankomats;
+    TRunnable<Banks> onClick;
+    public BankomatsAdapter(Context context, Banks[] bankomats, TRunnable<Banks> onClick){
         mContext = context;
         mBankomats = bankomats;
+        this.onClick = onClick;
     }
     @NonNull
     @Override
@@ -31,15 +35,22 @@ public class BankomatsAdapter extends RecyclerView.Adapter<BankomatsAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Bankomat bankomat = mBankomats[position];
-        holder.address.setText(bankomat.getAddress());
+        final Banks bankomat = mBankomats[position];
+        holder.address.setText(bankomat.FullAddress);
         holder.status.setText(bankomat.getStatusText());
-        holder.timings.setText(bankomat.getTimings());
-        if(bankomat.getStatus()) {
+        holder.timings.setText(bankomat.Time());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClick.run(bankomat);
+            }
+        });
+        if(bankomat.Status) {
             holder.status.setTextColor(mContext.getResources().getColor(R.color.bankomat_on));
         }else{
             holder.status.setTextColor(mContext.getResources().getColor(R.color.bankomat_off));
         }
+
     }
 
     @Override

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView eur;
     private static ArrayList<EntityValute> valuteArrayList;
@@ -40,12 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         TextView usd = (TextView) findViewById(R.id.usd_txt);
         eur = (TextView) findViewById(R.id.eur_txt);
-        findViewById(R.id.login_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewLoginDialog(v);
-            }
-        });
         TextView date = (TextView) findViewById(R.id.current_date);
         String url = "https://www.cbr.ru/scripts/XML_daily.asp?date_req=";
         String dateStr = new SimpleDateFormat("dd.MM.yyyy").format(new Date());
@@ -68,14 +62,21 @@ public class MainActivity extends AppCompatActivity {
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
+    }
 
-        final View view = findViewById(R.id.btn_currency);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.btn_currency:
                 viewCourseActivity(v);
-            }
-        });
+                break;
+            case R.id.btn_bankomats_list:
+                viewBanksActivity(v);
+                break;
+            case R.id.login_button:
+                viewLoginDialog(v);
+                break;
+        }
     }
 
     private void viewCourseActivity(View v){
@@ -84,13 +85,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewBanksActivity(View v){
-        Intent intent = new Intent(this, Banks.class);
+        Intent intent = new Intent(this, BankomatsActivity.class);
         startActivity(intent);
     }
 
     public void viewLoginDialog(View v){
-        Login dialog = new Login();
-        dialog.show(getSupportFragmentManager(),"Login");
+        Login login = new Login(this) {
+            @Override
+            public void run(String login, String password) {
+            }
+        };
+        login.show();
     }
 
 
