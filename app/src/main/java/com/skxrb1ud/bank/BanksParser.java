@@ -53,7 +53,8 @@ public class BanksParser {
                 JSONObject object = new JSONObject(json);
                 JSONArray arrBanks = object.getJSONArray("devices");
                 for (int i = 0; i < arrBanks.length(); i++) {
-                    JSONObject days = ((JSONObject)arrBanks.get(i)).getJSONObject("tw");
+                    JSONObject bank = arrBanks.getJSONObject(i);
+                    JSONObject days = bank.getJSONObject("tw");
                     String tw = "";
                     switch (Calendar.getInstance().get(Calendar.DAY_OF_WEEK)) {
                         case 1:
@@ -81,17 +82,17 @@ public class BanksParser {
                     String[] time = tw.split(" - ");
                     String address = "";
                     try {
-                        String[] temp = ((JSONObject)arrBanks.get(i)).getString("fullAddressRu").split(",");
+                        String[] temp = bank.getString("fullAddressRu").split(",");
                         for (int j = 2; j < temp.length; j++) {
                             address += temp[j] + (j == temp.length - 1 ? "" : ", ");
                         }
                     } catch (Exception e) {
-                        address = ((JSONObject)arrBanks.get(i)).getString("fullAddressRu");
+                        address = bank.getString("fullAddressRu");
                     }
-                    String type = ((JSONObject)arrBanks.get(i)).getString("type").equals("ATM") ? "Банкомат" : "Отделение";
-                    double lt = Double.parseDouble(((JSONObject)arrBanks.get(i)).getString("latitude"));
-                    double lng = Double.parseDouble(((JSONObject)arrBanks.get(i)).getString("longitude"));
-                    banks.add(new Bank(address, ((JSONObject)arrBanks.get(i)).getString("fullAddressRu"), ((JSONObject)arrBanks.get(i)).getString("placeRu"), type, time[0], time[1], lt, lng));
+                    String type = bank.getString("type").equals("ATM") ? "Банкомат" : "Отделение";
+                    double lt = Double.parseDouble(bank.getString("latitude"));
+                    double lng = Double.parseDouble(bank.getString("longitude"));
+                    banks.add(new Bank(address, bank.getString("fullAddressRu"), bank.getString("placeRu"), type, time[0], time[1], lt, lng));
                 }
             }
         } catch (Exception e) { }
