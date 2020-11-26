@@ -7,10 +7,8 @@ import android.net.http.HttpResponseCache;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.skxrb1ud.bank.Banks;
 import com.skxrb1ud.bank.R;
 import com.skxrb1ud.bank.entities.Entity_Valute;
 import com.skxrb1ud.bank.parsers.Parser_xml;
@@ -28,6 +26,7 @@ import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView usd;
     private TextView eur;
     private static ArrayList<Entity_Valute> valuteArrayList;
 
@@ -40,27 +39,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView usd = (TextView) findViewById(R.id.textView_USD);
+        usd = (TextView) findViewById(R.id.textView_USD);
         eur = (TextView) findViewById(R.id.textView_EUR);
+
         findViewById(R.id.login_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewLoginDialog(v);
             }
         });
+
+        findViewById(R.id.banks_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewBanksActivity(v);
+            }
+        });
+
         TextView date = (TextView) findViewById(R.id.textView_Date);
-        String url = "https://www.cbr.ru/scripts/XML_daily.asp?date_req=";
         String dateStr = new SimpleDateFormat("dd.MM.yyyy").format(new Date());
         date.setText(dateStr);
 
         try {
             DecimalFormat format = new DecimalFormat("0.00");
             Parser_xml parser = new Parser_xml();
-            String response = new getValutes().execute(url, dateStr).get();
+            String response = new getValutes().execute(getResources().getString(R.string.CB_valutes), dateStr).get();
             if (parser.Parsing(response)){
                 valuteArrayList = parser.getEntityValutes();
                 for (Entity_Valute valute : valuteArrayList){
-                    String cha = valute.getCharCode();
                     if (valute.getCharCode().equalsIgnoreCase("USD"))
                         usd.setText(format.format(valute.getValue()));
                     if (valute.getCharCode().equalsIgnoreCase("EUR"))
@@ -97,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private class getValutes extends AsyncTask<String, Void, String> {
+    private class getValutes extends AsyncTask<String, Void, String>{
 
         @Override
         protected String doInBackground(String... strings) {
@@ -121,4 +127,5 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
+
 }

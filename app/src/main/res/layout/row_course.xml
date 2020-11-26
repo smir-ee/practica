@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:padding="@dimen/padding_for_row">
+                android:padding="@dimen/rowPadding">
 
                 <ImageView
                     android:layout_width="40dp"

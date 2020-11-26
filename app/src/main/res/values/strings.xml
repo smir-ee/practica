@@ -5,5 +5,10 @@
     <string name="button_login">Войти</string>
     <string name="course">Курсы валют</string>
     <string name="write_login">Введите логин и пароль</string>
-    <string name="work_time">Время работы:</string>
+    <string name="workTime">Время работы:</string>
+    <string name="open">Открыто</string>
+    <string name="close">Закрыто</string>
+
+    <string name="API">https://api.privatbank.ua/p24api/infrastructure?json&amp;atm&amp;address=&amp;city=Харьков</string>
+    <string name="CB_valutes">https://www.cbr.ru/scripts/XML_daily.asp?date_req=</string>
 </resources>
