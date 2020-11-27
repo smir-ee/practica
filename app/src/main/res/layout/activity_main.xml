@@ -15,30 +15,35 @@
         android:paddingTop="60dp">
 
         <ImageView
+            android:id="@+id/iconImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/main_icon"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/main_icon" />
 
         <ImageView
+            android:id="@+id/titleImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/main_title"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/main_title" />
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnBanks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/map_icon"
+        android:layout_marginBottom="@dimen/padding_main_buttons"
         android:background="@drawable/button_radius_white"
+        android:drawableLeft="@drawable/map_icon"
+        android:gravity="center"
         android:padding="25dp"
         android:text="@string/atms"
-        android:textSize="@dimen/size_course_button"
-        android:gravity="center"
-        android:layout_marginBottom="@dimen/padding_main_buttons"/>
+        android:textSize="@dimen/size_course_button" />
 
-    <include layout="@layout/button_course"/>
+    <include
+        android:id="@+id/btnCourse"
+        layout="@layout/button_course" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -51,5 +56,4 @@
         android:text="@string/button_login"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/size_course_button" />
-
 </LinearLayout>

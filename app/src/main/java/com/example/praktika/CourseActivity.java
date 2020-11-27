@@ -12,6 +12,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.w3c.dom.Text;
+import org.xmlpull.v1.XmlPullParser;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -37,7 +38,6 @@ public class CourseActivity extends AppCompatActivity {
             setContentView(R.layout.activity_course);
 
             TextView textView_Date_CourseAct = findViewById(R.id.textView_Date_CourseAct);
-
             Date currentDate = new Date();
             DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
             String dateText = dateFormat.format(currentDate);
@@ -67,11 +67,8 @@ public class CourseActivity extends AppCompatActivity {
             doc = Jsoup.connect("https://www.cbr.ru/scripts/XML_daily.asp").get();
             Elements tables = doc.getElementsByTag("ValCurs");
             Element our_table = tables.get(0);
-            Elements elements_from_table = our_table.children();
-            Element dollar = elements_from_table.get(0);
-            Elements dollar_elements = dollar.children();
 
-            for(int i = 0; i<our_table.childrenSize(); i++)
+            for(int i = 0; i < our_table.childrenSize(); i++)
             {
                 ListItemClass items = new ListItemClass();
                 items.setData1(our_table.children().get(i).child(1).text());

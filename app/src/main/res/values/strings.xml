@@ -6,4 +6,5 @@
     <string name="time_work">Часы работы: </string>
     <string name="login">Авторизация</string>
     <string name="hint_dialog_login">Введите Ваш логин и пароль</string>
+    <string name="API">https://api.privatbank.ua/p24api/infrastructure?json&amp;atm&amp;address=&amp;city=Харьков</string>
 </resources>

@@ -2,6 +2,7 @@ package com.example.praktika;
 
 import android.app.LauncherActivity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.annotation.Nullable;
 
 import com.example.praktika.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +43,7 @@ public class CustomArrayAdapter extends ArrayAdapter {
             viewHolder.data2 = convertView.findViewById(R.id.valutefull);
             viewHolder.data3 = convertView.findViewById(R.id.textView_Sale_Course);
             viewHolder.data4 = convertView.findViewById(R.id.textView_Buy_Course);
+
             convertView.setTag(viewHolder);
         }
         else {
@@ -59,5 +62,4 @@ public class CustomArrayAdapter extends ArrayAdapter {
         TextView data3;
         TextView data4;
     }
-
 }

@@ -7,14 +7,16 @@
     >
 
     <TextView
+        android:id="@+id/textView_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login"
+        android:layout_marginBottom="@dimen/padding_for_title"
         android:gravity="center"
-        android:textSize="@dimen/size_title_dialog"
-        android:layout_marginBottom="@dimen/padding_for_title"/>
+        android:text="@string/login"
+        android:textSize="@dimen/size_title_dialog" />
 
     <TextView
+        android:id="@+id/textView_Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/padding_for_title"
@@ -23,29 +25,29 @@
         android:textSize="@dimen/size_hint_dialog" />
 
     <EditText
+        android:id="@+id/editText_Login"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:gravity="center_vertical"
         android:layout_marginBottom="2dp"
+        android:background="@drawable/styleedittext"
         android:fontFamily="sans-serif"
-        android:inputType="text"
+        android:gravity="center_vertical"
         android:hint="Username"
-        android:textSize="15dp"
+        android:inputType="text"
         android:paddingLeft="5dp"
         android:textColor="@color/colorGray"
-        android:background="@drawable/styleedittext"
-        />
+        android:textSize="15dp" />
 
     <EditText
+        android:id="@+id/editText_Password"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:gravity="center_vertical"
+        android:background="@drawable/styleedittext"
         android:fontFamily="sans-serif"
+        android:gravity="center_vertical"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textSize="15dp"
         android:paddingLeft="5dp"
         android:textColor="@color/colorGray"
-        android:background="@drawable/styleedittext"
-        />
+        android:textSize="15dp" />
 </LinearLayout>

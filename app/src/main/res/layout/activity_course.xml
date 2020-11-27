@@ -16,24 +16,26 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123"
+            android:text="27.11.2020"
             android:textSize="@dimen/size_course_button" />
 
         <TextView
+            android:id="@+id/textView_Buy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Покупка"
             android:gravity="center_horizontal"
-            android:textSize="@dimen/size_course_button"/>
+            android:text="Покупка"
+            android:textSize="@dimen/size_course_button" />
 
         <TextView
+            android:id="@+id/textView_Sale"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="Продажа"
-            android:textSize="@dimen/size_course_button"/>
+            android:textSize="@dimen/size_course_button" />
 
     </LinearLayout>
 
@@ -41,5 +43,4 @@
         android:id="@+id/listView_Course"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
 </LinearLayout>

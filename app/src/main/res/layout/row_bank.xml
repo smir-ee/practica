@@ -42,12 +42,12 @@
             />
 
         <TextView
+            android:id="@+id/textView_Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/time_work"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/size_row"
-            />
+            android:textSize="@dimen/size_row" />
 
         <TextView
             android:id="@+id/textView_worktime_bank"
