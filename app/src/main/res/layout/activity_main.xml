@@ -138,12 +138,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_main_buttons"
         android:background="@drawable/button_radius_blue"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:onClick="onClickLogin"
         android:padding="25dp"
         android:text="@string/button_login"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/size_couse_button"
-        android:backgroundTint="@color/colorPrimaryDark"
-        />
+        android:textAlignment="center"/>
 
 </LinearLayout>

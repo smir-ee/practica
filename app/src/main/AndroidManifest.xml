@@ -3,7 +3,6 @@
     package="com.oat.practica">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
-    <uses-permission android:name="android.permission.LOCATION_HARDWARE"></uses-permission>
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"

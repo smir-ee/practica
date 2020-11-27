@@ -114,10 +114,10 @@ public class CourseActivity extends AppCompatActivity {
             charcode.setText(valute.getCharCode());
 
             TextView buy = (TextView) convertView.findViewById(R.id.textView_Buy_Course);
-            buy.setText(new DecimalFormat("0.00").format(valute.getValue() * 1.5));
+            buy.setText(new DecimalFormat("0.00").format(valute.getValue() * 1.125));
 
             TextView sale = (TextView) convertView.findViewById(R.id.textView_Sale_Course);
-            sale.setText(new DecimalFormat("0.00").format(valute.getValue() * 1.25));
+            sale.setText(new DecimalFormat("0.00").format(valute.getValue()));
 
             ImageView buyArrow = (ImageView) convertView.findViewById(R.id.arrow_Buy_Course);
             ImageView saleArrow = (ImageView) convertView.findViewById(R.id.arrow_Sale_Course);
