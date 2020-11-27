@@ -2,20 +2,14 @@ package com.skxrb1ud.bank;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -25,6 +19,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ratesParser.Parse(Calendar.getInstance(), this, new RatesCallback() {
+            @Override
+            public void run(ArrayList<Rate> rates) {
+                for (int i = 0; i < rates.size(); i++) {
+                    if(rates.get(i).Code.equals("USD")) {
+                        ((TextView)findViewById(R.id.txtUSD)).setText(String.valueOf(rates.get(i).getPriceBuy()));
+                    }
+                    if(rates.get(i).Code.equals("EUR")) {
+                        ((TextView)findViewById(R.id.txtEUR)).setText(String.valueOf(rates.get(i).getPriceBuy()));
+                    }
+                }
+            }
+        });
     }
 
     @Override
