@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.oat.practica">
+    package="com.practica.bank">
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,18 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".rates"></activity>
-        <activity
-            android:name=".actBanks"
-            android:label="@string/title_activity_act_banks"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.practica.bank.HomeActivity"></activity>
+        <activity android:name="com.practica.bank.CurrencyActivity" />
+        <activity android:name="com.practica.bank.BankomatsActivity" />
+        <activity android:name="com.practica.bank.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD1rswGQdXiF6Qonc_nnFf5Djq0LukgI2c"/>
     </application>
 
 </manifest>
