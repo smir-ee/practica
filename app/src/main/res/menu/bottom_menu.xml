@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragmentMain"
+        android:icon="@drawable/icon_home"
+        android:title="Главная"/>
+    <item
+        android:id="@+id/fragmentPayments"
+        android:icon="@drawable/icon_payments"
+        android:title="Платежи"/>
+    <item
+        android:id="@+id/fragmentHistory"
+        android:icon="@drawable/icon_history"
+        android:title="История"/>
+    <item
+        android:id="@+id/navigation_dialogs"
+        android:icon="@drawable/icon_dialogs"
+        android:title="Диалоги"/>
+</menu>

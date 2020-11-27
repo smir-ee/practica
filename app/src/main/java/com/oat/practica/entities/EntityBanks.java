@@ -100,7 +100,9 @@ public class EntityBanks {
 
     public String getStreet(){
         String[] addressArray = address.split(",");
-        String street = addressArray[addressArray.length - 2] + ", " + addressArray[addressArray.length - 1];
-        return street;
+        if (address.contains("корпус"))
+            return addressArray[addressArray.length - 3] + addressArray[addressArray.length - 2] + ", " + addressArray[addressArray.length - 1];
+        else
+            return addressArray[addressArray.length - 2] + ", " + addressArray[addressArray.length - 1];
     }
 }

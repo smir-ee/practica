@@ -1,5 +1,6 @@
 <resources>
     <string name="server_CB">https://www.cbr.ru/scripts/XML_daily.asp?date_req=</string>
+    <string name="Local_server">https://64209e021411.ngrok.io</string>
     <string name="api_UA">https://api.privatbank.ua/p24api/infrastructure?json&amp;atm&amp;address=&amp;city=харьков</string>
     <string name="app_name">practica</string>
     <string name="otdeleeniya">Отделения и банкоматы</string>
@@ -9,7 +10,16 @@
     <string name="login">Авторизация</string>
     <string name="hint_dialog_loing">Введите Ваш логин и пароль</string>
 
-    <string name="open">Открыто</string>
+    <string name="open">Работает</string>
     <string name="closed">Закрыто</string>
+    <string name="title_activity_profile">ActivityProfile</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>

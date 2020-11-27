@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorBackgroundProfile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorProfile"
+        android:weightSum="7"
+        android:gravity="right"
+        >
+
+        <TextView
+            android:id="@+id/fio_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User's FIO"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_for_profile"
+            android:layout_margin="10dp"
+            android:layout_weight="5"
+            android:gravity="center_horizontal"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:src="@drawable/profile"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/nav_host_controller"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colorProfile"
+        app:itemTextColor="@drawable/bottom_nav_menu"
+        app:itemIconTint="@drawable/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_menu"/>
+
+</LinearLayout>

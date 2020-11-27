@@ -1,30 +1,32 @@
 package com.oat.practica.activities;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.net.http.HttpResponseCache;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.oat.practica.R;
 import com.oat.practica.dialogs.CustomDialog;
 import com.oat.practica.entities.EntityValute;
+import com.oat.practica.interfaces.tryUserData;
 import com.oat.practica.parsers.XmlParser;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -32,7 +34,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements tryUserData {
+
+    private String login;
+    private String password;
 
     private TextView usd;
     private TextView eur;
@@ -96,6 +101,20 @@ public class MainActivity extends AppCompatActivity {
         dialog.show(getSupportFragmentManager(),"Login");
     }
 
+    @Override
+    public void postUserData(String... strings) {
+        try{
+            JSONObject jsonObject = new JSONObject();
+            login = strings[0];
+            password = strings[1];
+            jsonObject.put("login", login);
+            jsonObject.put("password", password);
+            new postData().execute("/login", jsonObject.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     private class getValutes extends AsyncTask<String, Void, String>{
@@ -123,4 +142,66 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private class postData extends AsyncTask<String, Void, String>{
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            findViewById(R.id.progress_bar_main).setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try{
+                String url = getResources().getString(R.string.Local_server);
+                HttpResponseCache cache = HttpResponseCache.install(getCacheDir(), 10000L);
+                HttpURLConnection connection = (HttpURLConnection) new URL(url + strings[0]).openConnection();
+                connection.setRequestMethod("POST");
+                connection.setRequestProperty("Content-type", "application/json; UTF-8");
+                connection.setDoOutput(true);
+
+                OutputStream outputStream = connection.getOutputStream();
+                outputStream.write(strings[1].getBytes());
+                outputStream.flush();
+                outputStream.close();
+
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                StringBuilder builder = new StringBuilder();
+                String line = "";
+                while ((line = bufferedReader.readLine()) != null)
+                    builder.append(line);
+
+                bufferedReader.close();
+                connection.disconnect();
+
+                return builder.toString();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            findViewById(R.id.progress_bar_main).setVisibility(View.GONE);
+            try{
+                if (s != null){
+                    JSONObject jsonObject = new JSONObject(s);
+
+                    Intent intent = new Intent(getApplicationContext(), ActivityProfile.class);
+                    intent.putExtra("fio", jsonObject.getString("fio"));
+                    intent.putExtra("token", jsonObject.getString("token"));
+                    intent.putExtra("login", login);
+                    intent.putExtra("password", password);
+                    startActivity(intent);
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "Неправильно введены данные", Toast.LENGTH_SHORT).show();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

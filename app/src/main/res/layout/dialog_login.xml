@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:textSize="@dimen/size_title_dialog"
-        android:layout_marginBottom="@dimen/padding_for_title"/>
+        android:textSize="@dimen/size_title_dialog"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -20,16 +19,17 @@
         android:textSize="@dimen/size_hint_dialog"
         android:text="@string/hint_dialog_loing"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/padding_for_title"/>
+        android:layout_marginVertical="@dimen/size_row"/>
 
     <EditText
+        android:id="@+id/editText_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:layout_marginBottom="@dimen/padding_for_title"
         android:hint="Логин"/>
 
     <EditText
+        android:id="@+id/editText_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"

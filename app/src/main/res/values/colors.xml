@@ -13,4 +13,12 @@
 
     <color name="colorGreen">#2FFF00</color>
     <color name="colorRed">#FF0000</color>
+
+    <color name="colorBackgroundProfile">#2f2f2f</color>
+    <color name="colorProfile">#242424</color>
+
+    <color name="colorFontParent">#afafb4</color>
+    <color name="colorBackgroundParent">#efeff5</color>
+
+    <color name="colorFiolet">#ED8AFF</color>
 </resources>

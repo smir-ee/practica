@@ -12,6 +12,7 @@
     <dimen name="padding_for_row">5dp</dimen>
     <dimen name="padding_for_dialog">30dp</dimen>
 
+    <dimen name="size_for_profile">18sp</dimen>
 
 
 </resources>

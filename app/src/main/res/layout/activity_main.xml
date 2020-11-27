@@ -55,4 +55,11 @@
         android:layout_marginTop="@dimen/padding_main_buttons"
         android:onClick="viewLoginDialog"/>
 
+    <ProgressBar
+        android:id="@+id/progress_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/padding_main_buttons"
+        android:visibility="gone"/>
+
 </LinearLayout>

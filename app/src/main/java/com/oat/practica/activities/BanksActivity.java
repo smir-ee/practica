@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,19 +67,12 @@ import com.google.android.gms.maps.*;
 public class BanksActivity extends AppCompatActivity {
 
     private GoogleMap gMap;
-    private LatLng myLocation;
     private Context context;
+    private LocationManager locationManager;
+    private Location isHere;
 
     private ArrayList<EntityBanks> entityBanks;
     private ListView listView;
-    private LocationManager locationManager;
-    private Location isHere;
-    private LocationListener locationListener = new LocationListener() {
-        @Override
-        public void onLocationChanged(@NonNull Location location) {
-
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +83,6 @@ public class BanksActivity extends AppCompatActivity {
 
         String url = getResources().getString(R.string.api_UA);
         new parsingJson().execute(url);
-
     }
 
     private void createMapView() {
@@ -102,6 +95,12 @@ public class BanksActivity extends AppCompatActivity {
                     requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
                 }
                 else{
+                    gMap.moveCamera(CameraUpdateFactory.newCameraPosition(
+                            new CameraPosition.Builder()
+                                    .target(new LatLng(54.989342, 73.368212))
+                                    .zoom(10)
+                                    .build()));
+
                     gMap.setMyLocationEnabled(true);
                     gMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
                         @Override
@@ -119,13 +118,6 @@ public class BanksActivity extends AppCompatActivity {
 
                 for (int i = 0; i < entityBanks.size(); i++){
                     final EntityBanks banks = entityBanks.get(i);
-                    String status = "";
-
-                    if (banks.getStatus())
-                        status = getResources().getString(R.string.open);
-                    else
-                        status = getResources().getString(R.string.closed);
-
                     gMap.addMarker(new MarkerOptions().position(banks.getPosition()).title("" + i));
                 }
 
@@ -139,7 +131,6 @@ public class BanksActivity extends AppCompatActivity {
                     public View getInfoContents(Marker marker) {
                         View view = getLayoutInflater().inflate(R.layout.info_window_map, null);
                         EntityBanks banks = entityBanks.get(Integer.parseInt(marker.getTitle()));
-                        String tee = marker.getTitle();
 
                         TextView status = (TextView) view.findViewById(R.id.textView_status_map);
                         if (banks.getStatus()){
@@ -208,7 +199,10 @@ public class BanksActivity extends AppCompatActivity {
             if (parserUA.parsingData(s))
                 entityBanks = parserUA.getBanksArrayList();
 
+            ((View) findViewById(R.id.progress_bar_banks)).setVisibility(View.GONE);
+
             createMapView();
+
             customAdapter adapter = new customAdapter(getApplicationContext());
             listView = (ListView) findViewById(R.id.listView_Banks);
             listView.setAdapter(adapter);

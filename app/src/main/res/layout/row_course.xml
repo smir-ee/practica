@@ -23,6 +23,7 @@
                 android:padding="@dimen/padding_for_row">
 
                 <ImageView
+                    android:id="@+id/imageView_flag"
                     android:layout_width="40dp"
                     android:layout_height="20dp"
                     android:src="@drawable/main_icon"

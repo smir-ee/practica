@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.graphics.Matrix;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.net.http.HttpResponseCache;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.oat.practica.R;
 import com.oat.practica.entities.EntityValute;
@@ -96,6 +99,8 @@ public class CourseActivity extends AppCompatActivity {
             if (parser.Parsing(s))
                 valuteArrayListLast = parser.getEntityValutes();
 
+            ((View) findViewById(R.id.progress_bar_course)).setVisibility(View.GONE);
+
             customAdapter adapter = new customAdapter(getApplicationContext());
             listView.setAdapter(adapter);
         }
@@ -116,20 +121,25 @@ public class CourseActivity extends AppCompatActivity {
 
             EntityValute valute = (EntityValute) getItem(position);
 
-            TextView title = (TextView) convertView.findViewById(R.id.title_valute);
-            title.setText(valute.getName());
+            ((TextView) convertView.findViewById(R.id.title_valute)).setText(valute.getName());
+            ((TextView) convertView.findViewById(R.id.title_charcode)).setText(valute.getCharCode());
 
-            TextView charcode = (TextView) convertView.findViewById(R.id.title_charcode);
-            charcode.setText(valute.getCharCode());
-
-            TextView buy = (TextView) convertView.findViewById(R.id.textView_Buy_Course);
-            buy.setText(new DecimalFormat("0.00").format(valute.getValue() * 1.5));
-
-            TextView sale = (TextView) convertView.findViewById(R.id.textView_Sale_Course);
-            sale.setText(new DecimalFormat("0.00").format(valute.getValue() * 1.25));
+            ((TextView) convertView.findViewById(R.id.textView_Buy_Course))
+                    .setText(new DecimalFormat("0.00").format(valute.getValue() * 1.5));
+            ((TextView) convertView.findViewById(R.id.textView_Sale_Course))
+                    .setText(new DecimalFormat("0.00").format(valute.getValue() * 1.25));
 
             ImageView buyArrow = (ImageView) convertView.findViewById(R.id.arrow_Buy_Course);
             ImageView saleArrow = (ImageView) convertView.findViewById(R.id.arrow_Sale_Course);
+
+            try {
+                ((ImageView) convertView.findViewById(R.id.imageView_flag))
+                        .setImageDrawable(Drawable.createFromStream(
+                        getApplicationContext().getAssets().open(valute.getCharCode() + ".png"),null
+                ));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             if (valute.getValue() > valuteArrayListLast.get(position).getValue()){
                 buyArrow.setRotation(0);

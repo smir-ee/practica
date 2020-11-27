@@ -37,6 +37,12 @@
 
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/progress_bar_course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/padding_main_buttons"/>
+
     <ListView
         android:id="@+id/listView_Course"
         android:layout_width="match_parent"
