@@ -20,8 +20,11 @@ import androidx.fragment.app.DialogFragment;
 import com.morlag.wsbank.R;
 
 public class LoginDialog extends DialogFragment {
-
     public static final String TAG = "LoginDialog";
+    public interface NoticeDialogListener {
+        public void onLoginAttempt(String login, String password);
+    }
+    NoticeDialogListener mListener;
     EditText etLogin;
     EditText etPassword;
 
@@ -31,7 +34,6 @@ public class LoginDialog extends DialogFragment {
         etLogin = info.findViewById(R.id.etLogin);
         etPassword = info.findViewById(R.id.etPassword);
 
-        // Стандартная реализация диалогов
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                 .setTitle(R.string.authorization)
                 .setMessage(R.string.login_title)
@@ -41,7 +43,7 @@ public class LoginDialog extends DialogFragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String login = etLogin.getText().toString();
                         String password = etPassword.getText().toString();
-                        //отправить логин и пароль
+                        mListener.onLoginAttempt(login,password);
                     }
                 })
                 .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
@@ -52,5 +54,17 @@ public class LoginDialog extends DialogFragment {
                 });
 
         return builder.create();
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try {
+            if(context instanceof NoticeDialogListener)
+                mListener = (NoticeDialogListener)context;
+        }
+        catch (Exception ex) {
+            Log.d(TAG, "onAttach: ", ex);
+        }
     }
 }

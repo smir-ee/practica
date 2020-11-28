@@ -54,11 +54,8 @@ public class PointsActivity extends AppCompatActivity
                 setObtainedBankomats(result);
             }
         });
-
-
-
     }
-
+    // Вывести полученные банкоматы в список
     private void setObtainedBankomats(ArrayList<Bankomat> result){
         BankomatsAdapter adapter = new BankomatsAdapter(this,result, this);
         mRecyclerView.setAdapter(adapter);
@@ -66,7 +63,7 @@ public class PointsActivity extends AppCompatActivity
         loading.setVisibility(View.GONE); // Скрыть загрузку
         setBankomatsToMap(result);
     }
-
+    // Установить полученные банкоматы на карту
     private void setBankomatsToMap(ArrayList<Bankomat> bankomats){
         if(mMap != null){
             LatLngBounds.Builder builder = new LatLngBounds.Builder();

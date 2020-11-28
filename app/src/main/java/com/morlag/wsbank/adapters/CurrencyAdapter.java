@@ -1,6 +1,7 @@
 package com.morlag.wsbank.adapters;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.morlag.wsbank.LoginDialog;
 import com.morlag.wsbank.R;
 import com.morlag.wsbank.models.Valute;
 
@@ -79,6 +81,24 @@ public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.Curren
             Double value = Double.parseDouble(v.getValue().replace(",","."));
             valBuy.setText(format.format(value - (value * (Valute.COEFFICIENT-1))));
             valSell.setText(format.format( value * Valute.COEFFICIENT ));
+            try {
+                iconVal.setImageDrawable(
+                        Drawable.createFromStream(
+                                mContext.getAssets().open("flags/" + v.getCharCode() + ".png"),
+                                null));
+            }
+            catch (Exception ex){
+                Log.d(TAG, "bind: ",ex);
+                try {
+                    iconVal.setImageDrawable(
+                            Drawable.createFromStream(
+                                    mContext.getAssets().open("flags/Unknown.png"),
+                                    null));
+                }
+                catch (Exception ex1){
+                    Log.d(TAG, "bind: ",ex1);
+                }
+            }
         }
     }
 }

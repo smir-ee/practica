@@ -58,64 +58,19 @@ public class Bankomat {
 
         return null;
     }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public void setTw(String[] tw) {
-        this.tw = tw;
-    }
-
-    public String getFullAddressRu() {
-        return fullAddressRu;
-    }
-
-    public void setFullAddressRu(String fullAddressRu) {
-        this.fullAddressRu = fullAddressRu;
-    }
-
-    public String getNotFullAddressRu() {
-        return notFullAddressRu;
-    }
-
-    public void setNotFullAddressRu(String notFullAddressRu) {
-        this.notFullAddressRu = notFullAddressRu;
-    }
-
-    public String getPlaceRu() {
-        return placeRu;
-    }
-
-    public void setPlaceRu(String placeRu) {
-        this.placeRu = placeRu;
-    }
-
-    public String getCityRU() {
-        return cityRU;
-    }
-
-    public void setCityRU(String cityRU) {
-        this.cityRU = cityRU;
-    }
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
+    public String getLatitude() { return latitude; }
+    public void setLatitude(String latitude) { this.latitude = latitude; }
+    public String getLongitude() { return longitude; }
+    public void setLongitude(String longitude) { this.longitude = longitude; }
+    public void setTw(String[] tw) { this.tw = tw; }
+    public String getFullAddressRu() { return fullAddressRu; }
+    public void setFullAddressRu(String fullAddressRu) { this.fullAddressRu = fullAddressRu; }
+    public String getNotFullAddressRu() { return notFullAddressRu; }
+    public void setNotFullAddressRu(String notFullAddressRu) { this.notFullAddressRu = notFullAddressRu; }
+    public String getPlaceRu() { return placeRu; }
+    public void setPlaceRu(String placeRu) { this.placeRu = placeRu; }
+    public String getCityRU() { return cityRU; }
+    public void setCityRU(String cityRU) { this.cityRU = cityRU; }
 }
