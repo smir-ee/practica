@@ -163,10 +163,7 @@ public class Api{
         try {
             URL obj = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
-
             connection.setRequestMethod("GET");
-
-
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(),charset));
             String inputLine;
             StringBuffer response = new StringBuffer();
@@ -179,6 +176,5 @@ public class Api{
         }catch (Exception e){
             return "";
         }
-
     }
 }

@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.skxrb1ud.bank.dialogs.LoginDialog;
+import com.skxrb1ud.bank.models.Currency;
+import com.skxrb1ud.bank.runnables.CurrenciesRunnable;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,12 +23,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         findViewById(R.id.btn_bankomats_list).setOnClickListener(this);
         findViewById(R.id.btn_currency).setOnClickListener(this);
         findViewById(R.id.btn_login).setOnClickListener(this);
         TextView date = findViewById(R.id.current_date);
         date.setText(new SimpleDateFormat("dd.MM.yyyy").format(new Date()));
-        
+        Api.getCurrencies(this, new Date(), new CurrenciesRunnable() {
+            @Override
+            public void run(Currency[] currencies) {
+                for(int i = 0; i < currencies.length;i++){
+                    Currency currency = currencies[i];
+                    if(currency.getCharCode().equals("USD")){
+                        ((TextView)findViewById(R.id.usd_cur)).setText(String.valueOf(currency.getValue()));
+                    }
+                    if(currency.getCharCode().equals("EUR")){
+                        ((TextView)findViewById(R.id.eur_cur)).setText(String.valueOf(currency.getValue()));
+                    }
+                }
+            }
+        });
     }
 
     @Override

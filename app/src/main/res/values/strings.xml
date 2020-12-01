@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">Bank</string>
+    <string name="app_name">Главный экран</string>
     <string name="bankomats_text">Отделения и банкоматы</string>
     <string name="signin_text">Войти</string>
     <string name="signin">Авторизация</string>
+    <string name="bankomat_on">Работает</string>
+    <string name="bankomat_off">Закрыт</string>
 </resources>

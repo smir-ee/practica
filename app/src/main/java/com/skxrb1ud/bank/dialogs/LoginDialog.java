@@ -40,21 +40,6 @@ public abstract class LoginDialog extends Dialog implements View.OnClickListener
         setContentView(R.layout.login_dialog);
         findViewById(R.id.okay).setOnClickListener(this);
         findViewById(R.id.cancel).setOnClickListener(this);
-//        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-//        return builder.setView(R.layout.login_dialog)
-//                .setPositiveButton("Войти", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                    }
-//                })
-//                .setNegativeButton("Закрыть", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        dialogInterface.cancel();
-//                    }
-//                })
-//                .create();
     }
 
     @Override

@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -13,6 +15,7 @@ import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.skxrb1ud.bank.adapters.BankomatsAdapter;
 import com.skxrb1ud.bank.models.Bankomat;
@@ -24,12 +27,9 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapView);
         mapFragment.getMapAsync(this);
-
-
     }
 
     @Override
@@ -56,8 +56,35 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                      bankomats) {
                     googleMap.addMarker(new MarkerOptions()
                             .position(new LatLng(bank.getLongitude(),bank.getLatitude()))
-                            .title(bank.getAddress()));
+                            .title(bank.getAddress())).setTag(bank);
                 }
+            }
+        });
+        map.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+            @Override
+            public View getInfoWindow(Marker marker) {
+                return null;
+            }
+
+            @Override
+            public View getInfoContents(Marker marker) {
+                View view = getLayoutInflater().inflate(R.layout.marker_info, null);
+                Bankomat bank = (Bankomat)marker.getTag();
+
+                TextView status = view.findViewById(R.id.bankomat_status);
+                if (bank.getStatus()){
+                    status.setText(getResources().getString(R.string.bankomat_on));
+                    status.setTextColor(getResources().getColor(R.color.bankomat_on));
+                }
+                else {
+                    status.setText(getResources().getString(R.string.bankomat_off));
+                    status.setTextColor(getResources().getColor(R.color.bankomat_off));
+                }
+
+                ((TextView) view.findViewById(R.id.bankomat_address)).setText(bank.getAddress());
+                ((TextView) view.findViewById(R.id.bankomat_timings)).setText(bank.getTimings());
+
+                return view;
             }
         });
     }
